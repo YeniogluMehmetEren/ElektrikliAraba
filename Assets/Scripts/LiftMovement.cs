@@ -30,8 +30,8 @@ public class LiftMovement : MonoBehaviour
         if (basiliTutuluyor && btnUp.IsPressed() && transformLift.transform.position.y < liftMax.y)
         {
             transformLift.transform.position += Vector3.up * liftingSpeed;
-            Debug.Log(transformLift.transform.position.y);
-            Debug.Log(liftMax.y);
+            //Debug.Log(transformLift.transform.position.y);
+            //Debug.Log(liftMax.y);
         }
         if (basiliTutuluyor && btnDown.IsPressed() && transformLift.transform.position.y > liftMin.y )
         {
