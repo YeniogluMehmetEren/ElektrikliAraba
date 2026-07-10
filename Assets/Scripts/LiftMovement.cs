@@ -9,7 +9,7 @@ public class LiftMovement : MonoBehaviour
     public Button btnDown;
 
     Vector3 liftMin = new Vector3(0f, 0.085f, 0f);
-    Vector3 liftMax = new Vector3(0f, 4.3f, 0f);
+    Vector3 liftMax = new Vector3(0f, 1.7f, 0f);
 
     public bool basiliTutuluyor = false;
 
@@ -30,6 +30,8 @@ public class LiftMovement : MonoBehaviour
         if (basiliTutuluyor && btnUp.IsPressed() && transformLift.transform.position.y < liftMax.y)
         {
             transformLift.transform.position += Vector3.up * liftingSpeed;
+            Debug.Log(transformLift.transform.position.y);
+            Debug.Log(liftMax.y);
         }
         if (basiliTutuluyor && btnDown.IsPressed() && transformLift.transform.position.y > liftMin.y )
         {
