@@ -7,6 +7,16 @@ TagManager:
   - Apron
   - Glove
   - Shoes
+  - Conn1Connected
+  - Conn2Connected
+  - Conn3Connected
+  - Conn4Connected
+  - Conn5Connected
+  - Conn1Disconnected
+  - Conn2Disconnected
+  - Conn3Disconnected
+  - Conn4Disconnected
+  - Conn5Disconnected
   layers:
   - Default
   - TransparentFX
