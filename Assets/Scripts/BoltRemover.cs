@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class BoltRemover : MonoBehaviour
 {
+    [Header("Vida Ayarlarý")]
     public float asagiInmeMesafesi = 0.15f;
     public float islemSuresi = 1f;
     public float donusHizi = 720f;
-
-    public bool a;
-    public bool b;
 
     [Header("Tüm Vidalarýn Listesi")]
     public List<Vidalar> tumVidalar;
@@ -22,17 +21,35 @@ public class BoltRemover : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (a)
+        if (other.gameObject.CompareTag("Bolt"))
         {
-            //StartCoroutine(VidayiSok(vida));
-        }
-        if (b)
-        {
-            //StartCoroutine(VidayiTak(vida));
+            Transform boltTransform = other.transform.Find("Bolt"); //Child GameObject'e Transform üzerinden ulaþýlýyormuþ
+
+            if (boltTransform != null)
+            {
+                GameObject BoltGO = boltTransform.gameObject;
+
+                foreach (var vida in tumVidalar)
+                {
+                    if (BoltGO == vida.vidaGO)
+                    {
+                        if (vida.takiliMi)
+                        {
+                            StartCoroutine(VidayiSok(vida));
+                        }
+                        else
+                        {
+                            StartCoroutine(VidayiTak(vida));
+                        }
+                    }
+                }
+            }
         }
     }
+
+
 
     private IEnumerator VidayiSok(Vidalar vida)
     {
@@ -52,6 +69,7 @@ public class BoltRemover : MonoBehaviour
             yield return null;
         }
         vida.vidaGO.SetActive(false);
+        vida.takiliMi = false;
         vida.islemDevamEdiyor = false;
     }
 
@@ -76,7 +94,7 @@ public class BoltRemover : MonoBehaviour
         }
 
         vida.vidaGO.transform.position = vida.ilkPozisyon;
-        //takiliMi = true;
+        vida.takiliMi = true;
         vida.islemDevamEdiyor = false;
     }
 }
@@ -84,7 +102,7 @@ public class BoltRemover : MonoBehaviour
 [System.Serializable]
 public class Vidalar
 {
-    //public Collider etkilesimAlani;
+    public Collider etkilesimAlani;
     public GameObject vidaGO;
     public bool takiliMi = true;
 

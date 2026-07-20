@@ -17,6 +17,7 @@ TagManager:
   - Conn3Disconnected
   - Conn4Disconnected
   - Conn5Disconnected
+  - Bolt
   layers:
   - Default
   - TransparentFX
