@@ -1,0 +1,42 @@
+[33mcommit a459250740cc12f109c4793326941f5ee3eb58e4[m
+Author: ilyasCan <ilyaskuleli61@gmail.com>
+Date:   Tue Jul 21 12:48:53 2026 +0300
+
+    Batarya random sıcakık değerleri renkleri yapıldı ve fler normal mod ve thermal mod eklendi ve sıcaklık değerleri okundu
+
+Assets/Material/RayMaterial.mat
+Assets/Material/RayMaterial.mat.meta
+Assets/Material/ThermalCellMaterial.mat
+Assets/Material/ThermalCellMaterial.mat.meta
+Assets/RT_FLIR.renderTexture
+"Assets/Scenes/At\303\266lye.unity"
+Assets/Screen_RT.mat
+Assets/Scripts/Battery.meta
+Assets/Scripts/Battery/Data.meta
+Assets/Scripts/Battery/Data/BatteryCell.cs
+Assets/Scripts/Battery/Data/BatteryCell.cs.meta
+Assets/Scripts/Battery/Data/BatteryScenario.cs
+Assets/Scripts/Battery/Data/BatteryScenario.cs.meta
+Assets/Scripts/Battery/Data/CellStatus.cs
+Assets/Scripts/Battery/Data/CellStatus.cs.meta
+Assets/Scripts/Battery/Managers.meta
+Assets/Scripts/Battery/Managers/BatteryManager.cs
+Assets/Scripts/Battery/Managers/BatteryManager.cs.meta
+Assets/Scripts/Battery/Managers/SimulationManager.cs
+Assets/Scripts/Battery/Managers/SimulationManager.cs.meta
+Assets/Scripts/Battery/Managers/TemperatureGenerator.cs
+Assets/Scripts/Battery/Managers/TemperatureGenerator.cs.meta
+Assets/Scripts/Battery/Thermal.meta
+Assets/Scripts/Battery/Thermal/ThermalColorController.cs
+Assets/Scripts/Battery/Thermal/ThermalColorController.cs.meta
+Assets/Scripts/Battery/Thermal/ThermalDisplay.cs
+Assets/Scripts/Battery/Thermal/ThermalDisplay.cs.meta
+Assets/Scripts/Battery/Utils.meta
+Assets/Scripts/Battery/Utils/StatusCalculator.cs
+Assets/Scripts/Battery/Utils/StatusCalculator.cs.meta
+Assets/Scripts/FLIRController.cs
+Assets/Scripts/ThermalRaycaster.cs
+Assets/Scripts/ThermalRaycaster.cs.meta
+Assets/Settings/DefaultVolumeProfile.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+ProjectSettings/TagManager.asset
