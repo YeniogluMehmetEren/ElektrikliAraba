@@ -62,7 +62,7 @@ public class UyarıSeneryo : ISeneryo
     {
         if (gun == 0)
         {
-            return Mathf.Round(Random.Range((float)min_uyari_sicaklik, (float)max_uyari_sicaklik) * 10f) / 10f;
+            return Mathf.Round(Random.Range(min_uyari_sicaklik, 42f) * 10f) / 10f;
         }
 
         if (mevcutSicaklik >= 52f)

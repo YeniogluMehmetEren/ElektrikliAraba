@@ -286,6 +286,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
+--- !u!114 &49681977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1 &73297518
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,25 +569,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
   m_PrefabInstance: {fileID: 1100159758}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &168289805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &168289806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1435,10 +1434,93 @@ PrefabInstance:
       propertyPath: m_Name
       value: flir_e5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2764502209525781591, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0354
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764502209525781591, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0391
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764502209525781591, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0092
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_text
+      value: '5
+
+
+        25
+
+
+        NORMAL
+
+        
+
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_margin.w
+      value: -14.667326
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_margin.y
+      value: 0.066337466
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_margin.z
+      value: -0.2408619
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617189771164777941, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667836199712108227, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0444
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667836199712108227, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0069
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111489330211664511, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: thermalRaycaster
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9111489330211664511, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      propertyPath: termalBilgiOkuyucu
+      value: 
+      objectReference: {fileID: 365439114}
+    m_RemovedComponents:
+    - {fileID: 2965817360325540028, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2042139850205963634, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 365439114}
     - targetCorrespondingSourceObject: {fileID: 766764022969121143, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -1446,6 +1528,48 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+--- !u!1 &365439110 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2042139850205963634, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+  m_PrefabInstance: {fileID: 365439109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &365439111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3635403553962137072, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+  m_PrefabInstance: {fileID: 365439109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!4 &365439112 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8165262224067821669, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+  m_PrefabInstance: {fileID: 365439109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &365439113 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 1263465161397266599, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+  m_PrefabInstance: {fileID: 365439109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &365439114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365439110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73a5b7e5c6200b443b390c74e6fa4cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TermalBilgiOkuyucu
+  firePoint: {fileID: 365439112}
+  ekranBilgiText: {fileID: 365439111}
+  isin: {fileID: 365439113}
+  maxIsinMesafe: 3
 --- !u!1 &370977646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
@@ -2104,25 +2228,6 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &486144816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &486144817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2548,6 +2653,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
   m_PrefabInstance: {fileID: 1754178963}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &690988420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1 &726752669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,7 +2786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 747523978}
-  - component: {fileID: 747523977}
+  - component: {fileID: 747523979}
   m_Layer: 6
   m_Name: ThermalCells
   m_TagString: Untagged
@@ -2671,19 +2794,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &747523977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747523976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05e6517de0b6ebe43b9f51aea89091f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Thermal.ThermalDisplay
-  batteryManager: {fileID: 3641936805967231205}
 --- !u!4 &747523978
 Transform:
   m_ObjectHideFlags: 0
@@ -2712,6 +2822,19 @@ Transform:
   - {fileID: 873953741}
   m_Father: {fileID: 1283908007}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &747523979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747523976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ded3f957d8b8c45a71fc8b9d2973f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TermalHucrelerRenkYonetici
+  bataryaYoneticisi: {fileID: 3641936805967231200}
 --- !u!1 &756130045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,25 +4055,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &967477530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &967477531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4227,6 +4331,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb7a86a39a1c0843b3b53070e10fbbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FeetTrigger
+--- !u!114 &1009616951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1001 &1014048248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4242,11 +4364,11 @@ PrefabInstance:
     - target: {fileID: 1466426921649808636, guid: c69bf369407f67741b72380d4d809ba4, type: 3}
       propertyPath: batteryManager
       value: 
-      objectReference: {fileID: 3641936805967231205}
+      objectReference: {fileID: 0}
     - target: {fileID: 1466426921649808636, guid: c69bf369407f67741b72380d4d809ba4, type: 3}
       propertyPath: thermalDisplay
       value: 
-      objectReference: {fileID: 747523977}
+      objectReference: {fileID: 0}
     - target: {fileID: 8406962003729066020, guid: c69bf369407f67741b72380d4d809ba4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.72831
@@ -4292,6 +4414,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c69bf369407f67741b72380d4d809ba4, type: 3}
+--- !u!114 &1016113733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!4 &1028910368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
@@ -5664,25 +5804,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8546978762970462305, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
   m_PrefabInstance: {fileID: 2270022351615383659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1242734294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1242734295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6458,25 +6579,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
   m_PrefabInstance: {fileID: 309437435}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1500822534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1500822535
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6583,6 +6685,24 @@ MonoBehaviour:
     m_ManualQueueWasCompletedThisFrame: 0
     m_ManualQueueValue: 0
     m_ManualQueueTargetFrame: 0
+--- !u!114 &1510965647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1 &1514899652
 GameObject:
   m_ObjectHideFlags: 0
@@ -7037,6 +7157,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1599113761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1 &1619752111
 GameObject:
   m_ObjectHideFlags: 0
@@ -7096,25 +7234,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 0c86e0febd350704586126b89b1b32f0, type: 3}
   m_PrefabInstance: {fileID: 109099443}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1631276184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1631276185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7153,25 +7272,6 @@ MonoBehaviour:
   btnUp: {fileID: 562501570}
   btnDown: {fileID: 449768544}
   basiliTutuluyor: 0
---- !u!114 &1647096982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1647096983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7386,6 +7486,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_PhysicsTriggerInteraction: 1
+--- !u!114 &1668599078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1 &1669599444 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8243359737324412557, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
@@ -7737,25 +7855,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
---- !u!114 &1714740269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1714740270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7836,6 +7935,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3684939276629535019, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
   m_PrefabInstance: {fileID: 2270022351615383659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1728788905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1001 &1754178963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7913,6 +8030,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
+--- !u!114 &1761215273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1001 &1782060661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8439,25 +8574,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9062766935908766370, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
   m_PrefabInstance: {fileID: 2270022351615383659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1903580140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1903580141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8668,25 +8784,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2898216863245481431, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
   m_PrefabInstance: {fileID: 2270022351615383659}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1930503367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
 --- !u!65 &1930503368
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8973,6 +9070,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 5e4beaa0703497b44b6b6aac48ebee45, type: 3}
   m_PrefabInstance: {fileID: 2043833385}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2046132073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641936805967231194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!1 &2066103021
 GameObject:
   m_ObjectHideFlags: 0
@@ -38695,82 +38810,79 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3641936805967231205}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67958d3e121424645b5dae581d741a83, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3641936805967231204}
+      addedObject: {fileID: 3641936805967231200}
     - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1500822535}
     - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1500822534}
+      addedObject: {fileID: 1728788905}
     - targetCorrespondingSourceObject: {fileID: 8416272007918961125, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3641936805967231203}
     - targetCorrespondingSourceObject: {fileID: 8416272007918961125, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3641936805967231202}
+      addedObject: {fileID: 3641936805967231204}
     - targetCorrespondingSourceObject: {fileID: -7146521406498821007, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 168289806}
     - targetCorrespondingSourceObject: {fileID: -7146521406498821007, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 168289805}
+      addedObject: {fileID: 1599113761}
     - targetCorrespondingSourceObject: {fileID: -7640558969779515294, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3641936805967231201}
     - targetCorrespondingSourceObject: {fileID: -7640558969779515294, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3641936805967231200}
+      addedObject: {fileID: 3641936805967231202}
     - targetCorrespondingSourceObject: {fileID: -1599826595754709761, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1242734295}
     - targetCorrespondingSourceObject: {fileID: -1599826595754709761, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1242734294}
+      addedObject: {fileID: 2046132073}
     - targetCorrespondingSourceObject: {fileID: -466329591000292508, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1903580141}
     - targetCorrespondingSourceObject: {fileID: -466329591000292508, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1903580140}
+      addedObject: {fileID: 1009616951}
     - targetCorrespondingSourceObject: {fileID: -208595431880416365, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 486144817}
     - targetCorrespondingSourceObject: {fileID: -208595431880416365, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 486144816}
+      addedObject: {fileID: 1761215273}
     - targetCorrespondingSourceObject: {fileID: 281855664364225751, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1714740270}
     - targetCorrespondingSourceObject: {fileID: 281855664364225751, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1714740269}
+      addedObject: {fileID: 1510965647}
     - targetCorrespondingSourceObject: {fileID: -2045257923548263128, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1631276185}
     - targetCorrespondingSourceObject: {fileID: -2045257923548263128, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1631276184}
+      addedObject: {fileID: 1668599078}
     - targetCorrespondingSourceObject: {fileID: -6763858364670572316, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 967477531}
     - targetCorrespondingSourceObject: {fileID: -6763858364670572316, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 967477530}
+      addedObject: {fileID: 690988420}
     - targetCorrespondingSourceObject: {fileID: 8009987137999418058, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1930503368}
     - targetCorrespondingSourceObject: {fileID: 8009987137999418058, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1930503367}
+      addedObject: {fileID: 49681977}
     - targetCorrespondingSourceObject: {fileID: 8485173162082002552, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1647096983}
     - targetCorrespondingSourceObject: {fileID: 8485173162082002552, guid: 67958d3e121424645b5dae581d741a83, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1647096982}
+      addedObject: {fileID: 1016113733}
   m_SourcePrefab: {fileID: 100100000, guid: 67958d3e121424645b5dae581d741a83, type: 3}
 --- !u!1 &3641936805967231187 stripped
 GameObject:
@@ -38843,19 +38955,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231195}
+  m_GameObject: {fileID: 3641936805967231199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 365ed7b325585ba4dac287094073d681, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaYoneticisi
 --- !u!65 &3641936805967231201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38883,19 +38988,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231197}
+  m_GameObject: {fileID: 3641936805967231195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b331e0fd44c03b4aad01a5afbea68b4, type: 3}
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Data.BatteryCell
-  cellID: 0
-  isFaulty: 0
-  day1Temperature: 0
-  day2Temperature: 0
-  day3Temperature: 0
-  currentTemperature: 0
-  currentStatus: 0
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!65 &3641936805967231203
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38923,30 +39027,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231199}
+  m_GameObject: {fileID: 3641936805967231197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d3d35dcf9df7dc43aeb256df44e0f3a, type: 3}
+  m_Script: {fileID: 11500000, guid: b0493aa2c7a108d4badbb04cf4c5c9d9, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Managers.TemperatureGenerator
-  batteryManager: {fileID: 3641936805967231205}
-  scenario: 0
-  healthyRange: {x: 24, y: 30}
-  warningStart: {x: 36, y: 42}
-  criticalStart: {x: 45, y: 50}
---- !u!114 &3641936805967231205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641936805967231199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d60616b06c15a645b891160efac45b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BatterySystem.Managers.BatteryManager
-  cells: []
+  m_EditorClassIdentifier: Assembly-CSharp::BataryaDegiskenleri
+  cell_id: 0
+  birinci_sicaklik: 0
+  ikinci_sicaklik: 0
+  ucuncu_sicaklik: 0
+  mevcut_sicaklik: 0
+  hucre_durumu: 0
 --- !u!4 &3644802580958084724
 Transform:
   m_ObjectHideFlags: 0

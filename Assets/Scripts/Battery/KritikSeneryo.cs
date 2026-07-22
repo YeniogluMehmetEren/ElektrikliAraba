@@ -64,7 +64,8 @@ public class KritikSeneryo : ISeneryo
     {
         if (gun == 0)
         {
-            return Mathf.Round(Random.Range((float)min_kritik_sicaklik, (float)max_kritik_sicaklik) * 10f) / 10f;
+            return Mathf.Round(Random.Range(min_kritik_sicaklik, 60f) * 10f) / 10f;
+            
         }
 
         if (mevcutSicaklik >= 72f)

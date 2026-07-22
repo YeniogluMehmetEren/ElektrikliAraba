@@ -12,7 +12,7 @@ public class FLIRController : MonoBehaviour
     [SerializeField] private TMP_Text modeText;
 
     [Header("Systems")]
-    [SerializeField] private ThermalRaycaster thermalRaycaster;
+    [SerializeField] private TermalBilgiOkuyucu termalBilgiOkuyucu;
 
     private bool thermalMode = false;
 
@@ -20,18 +20,17 @@ public class FLIRController : MonoBehaviour
 
     private void Start()
     {
-        // Kameralar
         normalCamera.enabled = true;
         thermalCamera.enabled = false;
 
-        // Yazı
         modeText.text = "MODE : NORMAL";
 
-        // Thermal sistemi kapalı başlasın
-        if (thermalRaycaster != null)
-            thermalRaycaster.enabled = false;
+        if (termalBilgiOkuyucu != null)
+        {
+            termalBilgiOkuyucu.IsiniKapat();
+            termalBilgiOkuyucu.enabled = false;
+        }
 
-        Debug.Log("NORMAL MODE");
     }
 
     private void Update()
@@ -48,29 +47,25 @@ public class FLIRController : MonoBehaviour
 
         if (thermalMode)
         {
-            // Thermal Mode
             normalCamera.enabled = false;
             thermalCamera.enabled = true;
 
             modeText.text = "MODE : THERMAL";
 
-            if (thermalRaycaster != null)
-                thermalRaycaster.enabled = true;
+            if (termalBilgiOkuyucu != null)
+                termalBilgiOkuyucu.enabled = true;
 
-            Debug.Log("THERMAL MODE");
         }
         else
         {
-            // Normal Mode
             normalCamera.enabled = true;
             thermalCamera.enabled = false;
 
             modeText.text = "MODE : NORMAL";
 
-            if (thermalRaycaster != null)
-                thermalRaycaster.enabled = false;
+            if (termalBilgiOkuyucu != null)
+                termalBilgiOkuyucu.enabled = false;
 
-            Debug.Log("NORMAL MODE");
         }
     }
 }

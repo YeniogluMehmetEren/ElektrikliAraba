@@ -13,13 +13,26 @@ public class TermalHucrelerRenkYonetici : MonoBehaviour
     private void Awake()
     {
         TermalHucreleriHazirla();
-        CellHucreleriBul();
+        bataryaYoneticisi.BataryaGuncellendi += BataryaGuncellendi;
     }
 
-    private void Start()
+    
+
+    private void BataryaGuncellendi()
     {
+        CellHucreleriBul();
+
         TermalHucreRenkleriniGuncelle();
     }
+
+    private void OnDestroy()
+    {
+        if (bataryaYoneticisi != null)
+        {
+            bataryaYoneticisi.BataryaGuncellendi -= BataryaGuncellendi;
+        }
+    }
+
     private void TermalHucreleriHazirla()
     {
         termalHucreRenkMetarial = GetComponentsInChildren<MeshRenderer>();

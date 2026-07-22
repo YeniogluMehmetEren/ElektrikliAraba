@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using System;
 
 public class BataryaYoneticisi : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BataryaYoneticisi : MonoBehaviour
     private BataryaDegiskenleri[] hucreler;
 
     private int mevcut_gun = 1;
+
+    public event Action BataryaGuncellendi;
 
     private void Awake()
     {
@@ -21,7 +24,8 @@ public class BataryaYoneticisi : MonoBehaviour
         HucreSicakliklariniYukle();
 
         GunuYukle(mevcut_gun);
-      }
+        BataryaGuncellendi?.Invoke();
+    }
 
     public void SonrakiGun()
     {
@@ -35,6 +39,8 @@ public class BataryaYoneticisi : MonoBehaviour
         mevcut_gun++;
 
         GunuYukle(mevcut_gun);
+
+        BataryaGuncellendi?.Invoke();
     }
     private void HucreleriHazirla()
     {
@@ -52,7 +58,7 @@ public class BataryaYoneticisi : MonoBehaviour
 
     private void SenaryoOlustur()
     {
-        int secilenSeneryo = Random.Range(1, 4);
+        int secilenSeneryo = UnityEngine.Random.Range(1, 4);
 
         ISeneryo seneryo;
 

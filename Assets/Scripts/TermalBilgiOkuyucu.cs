@@ -80,15 +80,39 @@ public class TermalBilgiOkuyucu : MonoBehaviour
     private void BilgiyiGoster(BataryaDegiskenleri hucre)
     {
         ekranBilgiText.text =
-                                $"CELL {hucre.cell_id}\n\n" +
-                                $"{hucre.mevcut_sicaklik:0.0}°C\n\n" +
-                                $"{hucre.hucre_durumu}";
+            $"<color=#000000>CELL {hucre.cell_id}</color>\n\n" +
+            $"<color=#000000>{hucre.mevcut_sicaklik:0.0}°C</color>\n\n" +
+            $"<color={DurumRengi(hucre.hucre_durumu)}>{hucre.hucre_durumu}</color>";
     }
 
+    private string DurumRengi(HucreDurumu durum)
+    {
+        switch (durum)
+        {
+            case HucreDurumu.Normal:
+                return "#00FF00";   
+
+            case HucreDurumu.Uyarı:
+                return "#FFD700";   
+
+            case HucreDurumu.Kritik:
+                return "#FF3030";   
+
+            default:
+                return "#00FFFF";
+        }
+    }
+
+    public void IsiniKapat()
+    {
+        if (isin != null)
+            isin.enabled = false;
+
+        BilgiyiTemizle();
+    }
     private void BilgiyiTemizle()
     {
         ekranBilgiText.text = string.Empty;
     }
-
 
 }
