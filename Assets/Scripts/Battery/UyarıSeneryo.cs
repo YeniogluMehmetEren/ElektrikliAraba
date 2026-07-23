@@ -62,31 +62,41 @@ public class UyarıSeneryo : ISeneryo
     {
         if (gun == 0)
         {
-            return Mathf.Round(Random.Range(min_uyari_sicaklik, 42f) * 10f) / 10f;
-        }
+            bool normaldenBasla = Random.value < 0.6f;
 
-        if (mevcutSicaklik >= 52f)
-        {
-            mevcutSicaklik += Random.Range(-2f, 1f);
-        }
-        else if (mevcutSicaklik >= 45f)
-        {
-            mevcutSicaklik += Random.Range(-1f, 2f);
-        }
-        else if (mevcutSicaklik >= 40f)
-        {
-            mevcutSicaklik += Random.Range(0f, 3f);
+            if (normaldenBasla)
+            {
+                mevcutSicaklik = Random.Range(30f, 35f);
+            }
+            else
+            {
+                mevcutSicaklik = Random.Range(min_uyari_sicaklik, 42f);
+            }
         }
         else
         {
-            mevcutSicaklik += Random.Range(1f, 4f);
+            if (mevcutSicaklik < min_uyari_sicaklik)
+            {
+                mevcutSicaklik += Random.Range(4f, 8f);
+            }
+            else if (mevcutSicaklik < 45f)
+            {
+                mevcutSicaklik += Random.Range(3f, 6f);
+            }
+            else if (mevcutSicaklik < 52f)
+            {
+                mevcutSicaklik += Random.Range(1f, 3f);
+            }
+            else
+            {
+                mevcutSicaklik += Random.Range(-1f, 1f);
+            }
         }
 
-        mevcutSicaklik = Mathf.Clamp(mevcutSicaklik, min_uyari_sicaklik, max_uyari_sicaklik);
+        mevcutSicaklik = Mathf.Clamp(mevcutSicaklik, min_normal_sicaklik, max_uyari_sicaklik);
 
         return Mathf.Round(mevcutSicaklik * 10f) / 10f;
     }
-
 
     private float NormalSonrakiGunSicakligi(float mevcutSicaklik, int gun)
     {

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class KritikSeneryo : ISeneryo
 {
+    const int min_uyari_sicaklik = SicaklikDurumHesaplayici.min_uyari_sicaklik;
 
     const int min_kritik_sicaklik = SicaklikDurumHesaplayici.min_kritik_sicaklik;
     const int max_kritik_sicaklik = SicaklikDurumHesaplayici.max_kritik_sicaklik;
@@ -60,32 +61,39 @@ public class KritikSeneryo : ISeneryo
         return hucre_sicakligi;
     }
 
+
     private float KritikSonrakiGunSicakligi(float mevcutSicaklik, int gun)
     {
         if (gun == 0)
         {
-            return Mathf.Round(Random.Range(min_kritik_sicaklik, 60f) * 10f) / 10f;
-            
-        }
+            bool warningdenBasla = Random.value < 0.6f;
 
-        if (mevcutSicaklik >= 72f)
-        {
-            mevcutSicaklik += Random.Range(-2f, 1f);
-        }
-        else if (mevcutSicaklik >= 66f)
-        {
-            mevcutSicaklik += Random.Range(-1f, 2f);
-        }
-        else if (mevcutSicaklik >= 60f)
-        {
-            mevcutSicaklik += Random.Range(0f, 3f);
+            if (warningdenBasla)
+            {
+                mevcutSicaklik = Random.Range(min_uyari_sicaklik, 45f);
+            }
+            else
+            {
+                mevcutSicaklik = Random.Range(min_kritik_sicaklik, 60f);
+            }
         }
         else
         {
-            mevcutSicaklik += Random.Range(1f, 4f);
+            if (mevcutSicaklik < min_kritik_sicaklik)
+            {
+                mevcutSicaklik += Random.Range(10f, 15f);
+            }
+            else if (mevcutSicaklik < 66f)
+            {
+                mevcutSicaklik += Random.Range(4f, 8f);
+            }
+            else
+            {
+                mevcutSicaklik += Random.Range(3f, 5f);
+            }
         }
 
-        mevcutSicaklik = Mathf.Clamp(mevcutSicaklik, min_kritik_sicaklik, max_kritik_sicaklik);
+        mevcutSicaklik = Mathf.Clamp(mevcutSicaklik, min_uyari_sicaklik, max_kritik_sicaklik);
 
         return Mathf.Round(mevcutSicaklik * 10f) / 10f;
     }
