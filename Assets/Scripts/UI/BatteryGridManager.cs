@@ -23,12 +23,13 @@ public class BatteryGridManager : MonoBehaviour
         }
         hucreListesi.Clear();
 
+        int[] IDSýrasý = { 1, 3, 5, 7, 9, 11, 2, 4, 6, 8, 10, 12};
         for (int i = 0; i < toplamHucre; i++)
         {
             GameObject yeniHucre = Instantiate(hucrePrefab, gridContainer);
             BatteryCellUI cellScript = yeniHucre.GetComponent<BatteryCellUI>();
 
-            int hucreID = i + 1; // 1'den 12'ye kadar ID
+            int hucreID = IDSýrasý[i]; 
             cellScript.Setup(hucreID);
 
             hucreListesi.Add(cellScript);
@@ -41,9 +42,9 @@ public class BatteryGridManager : MonoBehaviour
         {
             if (id == hucre.GetHucreID())
             {
-                hucre.tempText.text = sicaklik;
+                hucre.tempText.text = sicaklik + " °C";
 
-                if (sicaklik != "Bilinmiyor °C")
+                if (sicaklik != "Bilinmiyor" && sicaklik != "Bilinmiyor °C")
                 {
                     if (float.Parse(sicaklik) >= 55f)
                         hucre.hucreArkaPlan.color = hucre.kritikRenk;
@@ -52,8 +53,25 @@ public class BatteryGridManager : MonoBehaviour
                     else
                         hucre.hucreArkaPlan.color = hucre.normalRenk;
                 }
+                else
+                {
+                    hucre.hucreArkaPlan.color = hucre.olculmediRenk;
+                }
             }
         }
         
+    }
+
+    public void IDBulSicaklikSýfýrla(int id, string sicaklik)
+    {
+        foreach (var hucre in hucreListesi)
+        {
+            if (id == hucre.GetHucreID())
+            {
+                hucre.tempText.text = "Bilinmiyor °C";
+                hucre.hucreArkaPlan.color = hucre.olculmediRenk;
+                
+            }
+        }
     }
 }

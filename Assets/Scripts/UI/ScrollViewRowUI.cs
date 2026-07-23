@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using UnityEditor;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,10 @@ public class ScrollViewRowUI : MonoBehaviour
     public TextMeshProUGUI tempText;
     public Button silButonu;
 
+    private int ID;
+    private string sicaklik;
+    private int eskiID = 1;
+
     private void Start()
     {
         tempButton.onClick.AddListener(ManualVeriGirisiDinleme);
@@ -19,29 +24,33 @@ public class ScrollViewRowUI : MonoBehaviour
 
     private void Update()
     {
-        BatteryCellUIGonderme(Convert.ToInt32(idDropdown.text), tempText.text);
+        if (idDropdown.text != "Hücre Seç")
+        {
+            if (eskiID == Convert.ToInt32(idDropdown.text))
+            {
+                BatteryCellUIGonderme(Convert.ToInt32(idDropdown.text), tempText.text);
+            }
+            else
+            {
+                BatteryCellUIGonderme(Convert.ToInt32(idDropdown.text), tempText.text);
+                BatteryCellUIGonderme(eskiID, "Bilinmiyor");
+                eskiID = Convert.ToInt32(idDropdown.text);
+            }
+        }
     }
 
     public void SatiriKur()
     {
-        tempText.text = "Bilinmiyor °C";
-
-        /*if (sicaklik < 35)
-        {
-            tempText.color = Color.green;
-        }
-        else if (sicaklik < 55)
-        {
-            tempText.color = Color.yellow;
-        }
-        else if (sicaklik <= 70)
-        {
-            tempText.color = Color.red;
-        }*/
+        tempText.text = "Bilinmiyor";
     }
 
     public void SatiriSil()
     {
+        BatteryGridManager kod = FindAnyObjectByType<BatteryGridManager>();
+        if (kod != null)
+        {
+            kod.IDBulSicaklikSýfýrla(ID, this.sicaklik);
+        }
         Destroy(gameObject);
     }
 
@@ -69,6 +78,8 @@ public class ScrollViewRowUI : MonoBehaviour
 
         if (kod != null)
         {
+            ID = id;
+            this.sicaklik = sicaklik;
             kod.IDBulSicaklikGuncelle(id, sicaklik);
         }
     }
