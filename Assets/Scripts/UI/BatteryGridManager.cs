@@ -74,4 +74,15 @@ public class BatteryGridManager : MonoBehaviour
             }
         }
     }
+    public BatteryCellUI IDdenHucreBulma(int id)
+    {
+        foreach (var hucre in hucreListesi)
+        {
+            if (id == hucre.GetHucreID())
+            {
+                return hucre;
+            }
+        }
+        return null;
+    }
 }
