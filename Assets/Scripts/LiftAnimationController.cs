@@ -4,17 +4,15 @@ public class LiftAnimationController : MonoBehaviour
 {
     private Animator animator;
 
-    // Animasyonun o anki konumu (0-1 arası)
-    private float currentTime = 0f;
+    [SerializeField] private BataryaSokTak bataryaSokTak;
+    [SerializeField] private LiftTemasKontrol temasKontrol;
 
-    // Hareket yönü
-    private int direction = 0;
-    // 1 = yukarı
-    // -1 = aşağı
-    // 0 = dur
+    private float animasyon_konumu = 0f;
 
-    // LiftUp animasyonu toplam uzunluğu
-    private const float liftUpLength = 7.267f;
+  
+    private int hareket_yonu = 0;
+
+    private const float lift_yukselme_suresi = 7.267f;
 
     void Start()
     {
@@ -28,42 +26,53 @@ public class LiftAnimationController : MonoBehaviour
 
     void Update()
     {
-        if (direction == 0)
+        if (hareket_yonu == 0)
             return;
 
-        currentTime += (direction * Time.deltaTime) / liftUpLength;
+        animasyon_konumu += (hareket_yonu * Time.deltaTime) / lift_yukselme_suresi;
 
-        currentTime = Mathf.Clamp01(currentTime);
+        animasyon_konumu = Mathf.Clamp01(animasyon_konumu);
 
-        animator.Play("LiftUp", 0, currentTime);
+        animator.Play("LiftUp", 0, animasyon_konumu);
         animator.Update(0);
 
-        if (currentTime <= 0f)
-            direction = 0;
+        if (animasyon_konumu <= 0f)
+            hareket_yonu = 0;
 
-        if (currentTime >= 1f)
-            direction = 0;
+        if (animasyon_konumu >= 1f)
+            hareket_yonu = 0;
     }
 
-    // YEŞİL
     public void ButtonUpPressed()
     {
-        direction = 1;
+        if (temasKontrol != null &&
+            temasKontrol.Bataryaya_temas_ediyormu &&
+            !bataryaSokTak.BataryaLiftteMi)
+        {
+            Debug.Log("Lift en üst noktada yukarı cıkamaz");
+            return;
+        }
+
+        hareket_yonu = 1;
     }
 
     public void ButtonUpReleased()
     {
-        direction = 0;
+        hareket_yonu = 0;
     }
 
-    // KIRMIZI
     public void ButtonDownPressed()
     {
-        direction = -1;
+        hareket_yonu = -1;
     }
 
     public void ButtonDownReleased()
     {
-        direction = 0;
+        hareket_yonu = 0;
+    }
+
+    public void HareketiDurdur()
+    {
+        hareket_yonu = 0;
     }
 }

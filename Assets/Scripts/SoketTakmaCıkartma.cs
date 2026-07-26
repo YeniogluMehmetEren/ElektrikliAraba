@@ -83,4 +83,16 @@ public class SoketTakmaCıkartma : MonoBehaviour
             }
         }
     }
+
+    public bool TumSoketlerSokulduMu
+    {
+        get
+        {
+            return conn1Disconnected.activeSelf &&
+                   conn2Disconnected.activeSelf &&
+                   conn3Disconnected.activeSelf &&
+                   conn4Disconnected.activeSelf &&
+                   conn5Disconnected.activeSelf;
+        }
+    }
 }
