@@ -13,6 +13,8 @@ public class BoltRemover : MonoBehaviour
     [Header("Tüm Vidalarýn Listesi")]
     public List<Vidalar> tumVidalar;
 
+    public static int kacVidaSokuldu = 0;
+
     private void Start()
     {
         foreach (var vida in tumVidalar)
@@ -25,27 +27,26 @@ public class BoltRemover : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bolt"))
         {
-            Transform boltTransform = other.transform.Find("Bolt"); //Child GameObject'e Transform üzerinden ulaþýlýyormuþ
+            //Transform boltTransform = other.transform.Find("Bolt"); //Child GameObject'e Transform üzerinden ulaþýlýyormuþ
+            //GameObject BoltGO = boltTransform.gameObject;     GameObject üzerinden deðil collider üzerinden GO ulaþýcaz
 
-            if (boltTransform != null)
+            foreach (var vida in tumVidalar)
             {
-                GameObject BoltGO = boltTransform.gameObject;
-
-                foreach (var vida in tumVidalar)
+                if (other == vida.etkilesimAlani)
                 {
-                    if (BoltGO == vida.vidaGO)
+                    if (vida.takiliMi)
                     {
-                        if (vida.takiliMi)
-                        {
-                            StartCoroutine(VidayiSok(vida));
-                        }
-                        else
-                        {
-                            StartCoroutine(VidayiTak(vida));
-                        }
+                        StartCoroutine(VidayiSok(vida));
+                        kacVidaSokuldu++;
+                    }
+                    else
+                    {
+                        StartCoroutine(VidayiTak(vida));
+                        kacVidaSokuldu--;
                     }
                 }
             }
+            
         }
     }
 
@@ -97,7 +98,22 @@ public class BoltRemover : MonoBehaviour
         vida.takiliMi = true;
         vida.islemDevamEdiyor = false;
     }
+
+    public bool VidalarinHepsiSokulduMu()
+    {
+        if (kacVidaSokuldu == 13)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public int GetKacVidaSokuldu() { return kacVidaSokuldu; }
 }
+
+
 
 [System.Serializable]
 public class Vidalar

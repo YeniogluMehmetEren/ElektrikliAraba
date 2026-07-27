@@ -10,6 +10,9 @@ public class RowUretme : MonoBehaviour
     public Transform contentKutusuGun1;
     public Transform contentKutusuGun2;
     public Transform contentKutusuGun3;
+    public Transform contentKutusuGercekDegerGun1;
+    public Transform contentKutusuGercekDegerGun2;
+    public Transform contentKutusuGercekDegerGun3;
     public GameObject sonucSatirPrefab;
 
     public void YeniOlcumEkle()
@@ -58,5 +61,54 @@ public class RowUretme : MonoBehaviour
                 satirKodu.SatiriKur(item.idText.text.ToString(), item.tempText.text.ToString());
             }
         }
+
+        BataryaYoneticisi gercekVeriler = FindAnyObjectByType<BataryaYoneticisi>();
+        BataryaDegiskenleri[] hucreler = gercekVeriler.HucreleriGetir();
+
+        foreach (var item in hucreler)
+        {
+            GercekDegerSonucYazdýr(item);
+        }
+    }
+
+    void GercekDegerSonucYazdýr(BataryaDegiskenleri item)
+    {
+        if (item.birinci_sicaklik >= 35)
+        {
+            GameObject yeniSatir = Instantiate(sonucSatirPrefab, contentKutusuGercekDegerGun1);
+            ScrollViewSonucRowUI satirKodu = yeniSatir.GetComponent<ScrollViewSonucRowUI>();
+            if (satirKodu != null)
+            {
+                satirKodu.SatiriKur(item.cell_id.ToString(), item.birinci_sicaklik.ToString() + " °C");
+                SicaklikRenkDegistir(satirKodu);
+            }
+        }
+        if (item.ikinci_sicaklik >= 35)
+        {
+            GameObject yeniSatir = Instantiate(sonucSatirPrefab, contentKutusuGercekDegerGun2);
+            ScrollViewSonucRowUI satirKodu = yeniSatir.GetComponent<ScrollViewSonucRowUI>();
+            if (satirKodu != null)
+            {
+                satirKodu.SatiriKur(item.cell_id.ToString(), item.ikinci_sicaklik.ToString() + " °C");
+                SicaklikRenkDegistir(satirKodu);
+            }
+        }
+        if (item.ucuncu_sicaklik >= 35)
+        {
+            GameObject yeniSatir = Instantiate(sonucSatirPrefab, contentKutusuGercekDegerGun3);
+            ScrollViewSonucRowUI satirKodu = yeniSatir.GetComponent<ScrollViewSonucRowUI>();
+            if (satirKodu != null)
+            {
+                satirKodu.SatiriKur(item.cell_id.ToString(), item.ucuncu_sicaklik.ToString() + " °C");
+                SicaklikRenkDegistir(satirKodu);
+            }
+        }
+    }
+    void SicaklikRenkDegistir(ScrollViewSonucRowUI satir)
+    {
+        if (float.Parse(satir.tempText.text) >= 55f)
+            satir.tempText.color = Color.red;
+        else if (float.Parse(satir.tempText.text) >= 35f)
+            satir.tempText.color = Color.yellow;
     }
 }
