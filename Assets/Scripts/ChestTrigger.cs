@@ -4,6 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class ChestTrigger : MonoBehaviour
 {
+    public bool giysiGiyildiMi = false;
     private void OnTriggerEnter(Collider other)
     {
         XRGrabInteractable grab =
@@ -22,6 +23,7 @@ public class ChestTrigger : MonoBehaviour
 
         Debug.Log("Güvenlik önlüğü giyildi.");
 
+        giysiGiyildiMi = true;
         grab.gameObject.SetActive(false);
     }
 }

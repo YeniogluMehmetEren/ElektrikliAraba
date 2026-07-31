@@ -12,6 +12,8 @@ public class GloveWear : MonoBehaviour
     public Material gloveMaterial;
 
     private bool equipped = false;
+    public bool eldivenGiyildiMi = false;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +36,7 @@ public class GloveWear : MonoBehaviour
             return;
 
         equipped = true;
+        eldivenGiyildiMi = true;
 
         // İki ele de eldiven materyalini uygula
         leftHand.material = gloveMaterial;

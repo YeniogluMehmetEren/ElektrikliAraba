@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class FeetTrigger : MonoBehaviour
 {
     private bool equipped = false;
+    public bool ayakkabiGiyildiMi = false;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,7 @@ public class FeetTrigger : MonoBehaviour
             return;
 
         equipped = true;
+        ayakkabiGiyildiMi = true;
 
         Debug.Log("Koruyucu ayakkabı giyildi.");
 

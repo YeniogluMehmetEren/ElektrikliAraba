@@ -13,6 +13,8 @@ public class LiftMovement : MonoBehaviour
 
     public bool basiliTutuluyor = false;
 
+    public bool liftEnYukardaMi = false;
+
 
     public void ButonaBasildi()
     {
@@ -32,6 +34,10 @@ public class LiftMovement : MonoBehaviour
             transformLift.transform.position += Vector3.up * liftingSpeed;
             //Debug.Log(transformLift.transform.position.y);
             //Debug.Log(liftMax.y);
+            if (transformLift.transform.position.y >= liftMax.y)
+            {
+                liftEnYukardaMi = true;
+            }
         }
         if (basiliTutuluyor && btnDown.IsPressed() && transformLift.transform.position.y > liftMin.y )
         {
