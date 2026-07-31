@@ -8549,6 +8549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrillModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a2db4b3080b66f40a074e8e6a59ac13, type: 3}
+      propertyPath: m_TagString
+      value: Matkap
+      objectReference: {fileID: 0}
     - target: {fileID: 1290266885326375920, guid: 0a2db4b3080b66f40a074e8e6a59ac13, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

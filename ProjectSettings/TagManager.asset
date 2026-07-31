@@ -19,6 +19,7 @@ TagManager:
   - Conn5Disconnected
   - Bolt
   - Lift
+  - Matkap
   layers:
   - Default
   - TransparentFX
