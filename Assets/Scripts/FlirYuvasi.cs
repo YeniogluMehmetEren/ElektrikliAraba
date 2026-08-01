@@ -4,41 +4,36 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class FlirYuvasi : MonoBehaviour
 {
-    [SerializeField] private XRSocketInteractor flirYuvasi;
-    [SerializeField] private GameObject sariAlan;
+    [SerializeField] private XRSocketInteractor flir_yuvasi;
+    [SerializeField] private GameObject sari_alan;
 
     private void Start()
     {
-        // Oyun başladığında sarı alan görünmesin
-        if (sariAlan != null)
-            sariAlan.SetActive(false);
+        if (sari_alan != null)
+            sari_alan.SetActive(false);
 
-        // FLIR alındığında
-        flirYuvasi.selectExited.AddListener(FlirAlindi);
+        flir_yuvasi.selectExited.AddListener(FlirAlindi);
 
-        // FLIR yerine bırakıldığında
-        flirYuvasi.selectEntered.AddListener(FlirBirakildi);
+        flir_yuvasi.selectEntered.AddListener(FlirBirakildi);
     }
 
     private void OnDestroy()
     {
-        flirYuvasi.selectExited.RemoveListener(FlirAlindi);
-        flirYuvasi.selectEntered.RemoveListener(FlirBirakildi);
+        flir_yuvasi.selectExited.RemoveListener(FlirAlindi);
+        flir_yuvasi.selectEntered.RemoveListener(FlirBirakildi);
     }
 
     private void FlirAlindi(SelectExitEventArgs olayBilgisi)
     {
-        if (sariAlan != null)
-            sariAlan.SetActive(true);
+        if (sari_alan != null)
+            sari_alan.SetActive(true);
 
-        Debug.Log("FLIR alındı.");
     }
 
     private void FlirBirakildi(SelectEnterEventArgs olayBilgisi)
     {
-        if (sariAlan != null)
-            sariAlan.SetActive(false);
+        if (sari_alan != null)
+            sari_alan.SetActive(false);
 
-        Debug.Log("FLIR yerine bırakıldı.");
     }
 }
