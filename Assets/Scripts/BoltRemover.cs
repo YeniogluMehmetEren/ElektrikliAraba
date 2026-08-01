@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework.Internal;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using static UnityEngine.Rendering.GPUSort;
 
 public class BoltRemover : MonoBehaviour
 {
@@ -13,7 +15,9 @@ public class BoltRemover : MonoBehaviour
     [Header("Tüm Vidalarýn Listesi")]
     public List<Vidalar> tumVidalar;
 
-    public static int kacVidaSokuldu = 0;
+    public int kacVidaSokuldu = 0;
+
+    public bool matkapTutulduMu = false;
 
     private void Start()
     {
@@ -111,6 +115,15 @@ public class BoltRemover : MonoBehaviour
         }
     }
     public int GetKacVidaSokuldu() { return kacVidaSokuldu; }
+
+    public void MatkapTutuldu(SelectEnterEventArgs args) 
+    {
+        if (args.interactorObject is XRSocketInteractor)
+        {
+            return;
+        }
+        matkapTutulduMu = true; 
+    }
 }
 
 

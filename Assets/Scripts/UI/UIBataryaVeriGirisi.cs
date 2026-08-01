@@ -13,23 +13,30 @@ public class UIBataryaVeriGirisi : MonoBehaviour
     public List<BatteryCellUI> batteryCellDataGun2 = new List<BatteryCellUI>();
     public List<BatteryCellUI> batteryCellDataGun3 = new List<BatteryCellUI>();
 
-    private int gun = 1; 
+    public int gun = 1; 
+
+    public bool gun2GecildiMi = false;
+    public bool gun3GecildiMi = false;
+    public bool sonucGecildiMi = false;
     public void Gun2yeGec()
     {
         panelGun1.SetActive(false);
         panelGun2.SetActive(true);
         gun = 2;
+        gun2GecildiMi = true;
     }
     public void Gun3eGec()
     {
         panelGun2.SetActive(false);
         panelGun3.SetActive(true);
         gun = 3;
+        gun3GecildiMi = true;
     }
     public void SonucaGec()
     {
         panelGun3.SetActive(false);
         panelSonuc.SetActive(true);
+        sonucGecildiMi = true;
     }
 
     public void AddBatteryData(BatteryCellUI batteryData)

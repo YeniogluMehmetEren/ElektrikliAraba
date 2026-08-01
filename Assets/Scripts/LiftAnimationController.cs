@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LiftAnimationController : MonoBehaviour
@@ -13,6 +14,8 @@ public class LiftAnimationController : MonoBehaviour
     private int hareket_yonu = 0;
 
     private const float lift_yukselme_suresi = 7.267f;
+
+    public bool kucukLiftEnYukardaMi = false;
 
     void Start()
     {
@@ -50,6 +53,7 @@ public class LiftAnimationController : MonoBehaviour
             !bataryaSokTak.BataryaLiftteMi)
         {
             Debug.Log("Lift en üst noktada yukarı cıkamaz");
+            kucukLiftEnYukardaMi = true;
             return;
         }
 
@@ -74,5 +78,14 @@ public class LiftAnimationController : MonoBehaviour
     public void HareketiDurdur()
     {
         hareket_yonu = 0;
+    }
+
+    public bool BataryaAlınıpAşağıyaIndiMi()
+    {
+        if (animasyon_konumu == 0f && temasKontrol.Bataryaya_temas_ediyormu)
+        {
+            return true;
+        }
+        return false;
     }
 }

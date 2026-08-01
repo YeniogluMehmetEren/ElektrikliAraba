@@ -1,6 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class FLIRController : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class FLIRController : MonoBehaviour
     private bool thermalMode = false;
 
     public bool IsThermalMode => thermalMode;
+
+    public bool termalTutulduMu = false;
 
     private void Start()
     {
@@ -67,5 +71,14 @@ public class FLIRController : MonoBehaviour
                 termalBilgiOkuyucu.enabled = false;
 
         }
+    }
+
+    public void TermalTutuldu(SelectEnterEventArgs args)
+    {
+        if (args.interactorObject is XRSocketInteractor)
+        {
+            return;
+        }
+        termalTutulduMu = true;
     }
 }
