@@ -18,6 +18,10 @@ public class GorevPaneliUI : MonoBehaviour
     private LiftAnimationController kucukLiftMovement;
     private FLIRController fLIRController;
     private UIBataryaVeriGirisi uiBataryaVeriGirisi;
+
+    [SerializeField] private NesneGorevVurgulama onluk;
+    [SerializeField] private NesneGorevVurgulama eldiven;
+    [SerializeField] private NesneGorevVurgulama ayakkabi;
     void Start()
     {
         chestTrigger = FindAnyObjectByType<ChestTrigger>();
@@ -35,8 +39,9 @@ public class GorevPaneliUI : MonoBehaviour
         uiBataryaVeriGirisi = FindAnyObjectByType<UIBataryaVeriGirisi>();
 
 
-        //StartCoroutine(SetGorevGiysiGiy());
-        StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
+        StartCoroutine(SetGorevGiysiGiy());
+        
+        //StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
         /*
         SetGorevGiysiGiy();
         SetGorevAracýYukarýKaldýr();
@@ -61,27 +66,36 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduAyakkabi.gorevYazisi.text = "Ayakkabýlarý Giy.";
         satirKoduAyakkabi.toggleTamamlandiMi.isOn = false;
 
-        while (!chestTrigger.giysiGiyildiMi || !gloveTrigger.eldivenGiyildiMi || !feetTrigger.ayakkabiGiyildiMi)
+        onluk.GorevBasladi();
+
+        while (!chestTrigger.giysiGiyildiMi)
         {
-            if (chestTrigger.giysiGiyildiMi)
-            {
-                satirKoduOnluk.toggleTamamlandiMi.isOn = true;
-            }
-
-            if (gloveTrigger.eldivenGiyildiMi)
-            {
-                satirKoduEldiven.toggleTamamlandiMi.isOn = true;
-            }
-
-            if (feetTrigger.ayakkabiGiyildiMi)
-            {
-                satirKoduAyakkabi.toggleTamamlandiMi.isOn = true;
-            }
             yield return null;
         }
+
         satirKoduOnluk.toggleTamamlandiMi.isOn = true;
+        onluk.GorevBitti();
+
+        eldiven.GorevBasladi();
+
+        while (!gloveTrigger.eldivenGiyildiMi)
+        {
+            yield return null;
+        }
+
         satirKoduEldiven.toggleTamamlandiMi.isOn = true;
+        eldiven.GorevBitti();
+
+        ayakkabi.GorevBasladi();
+
+      
+        while (!feetTrigger.ayakkabiGiyildiMi)
+        {
+            yield return null;
+        }
+
         satirKoduAyakkabi.toggleTamamlandiMi.isOn = true;
+        ayakkabi.GorevBitti();
 
         yeniPrefebOnluk.SetActive(false);
         yeniPrefebAyakkabi.SetActive(false);

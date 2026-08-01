@@ -1887,6 +1887,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 969506632909353470, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
+      propertyPath: onluk
+      value: 
+      objectReference: {fileID: 1904151403}
+    - target: {fileID: 969506632909353470, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
+      propertyPath: eldiven
+      value: 
+      objectReference: {fileID: 2131770750}
+    - target: {fileID: 969506632909353470, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
+      propertyPath: ayakkabi
+      value: 
+      objectReference: {fileID: 1053048634}
+    - target: {fileID: 969506632909353470, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
       propertyPath: baslikText
       value: 
       objectReference: {fileID: 0}
@@ -2423,6 +2435,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2042139850205963634, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 365439114}
+    - targetCorrespondingSourceObject: {fileID: 2042139850205963634, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 365439120}
+    - targetCorrespondingSourceObject: {fileID: 2042139850205963634, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 365439121}
     - targetCorrespondingSourceObject: {fileID: 766764022969121143, guid: 77328c794eb67084a9a57b7582b28a19, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -2483,6 +2501,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41a92c0cd2c1c24ea05696c80f2f17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FLIRController
+--- !u!114 &365439120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365439110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &365439121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365439110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &370977646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
@@ -2665,6 +2714,42 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 727566778}
   m_SourcePrefab: {fileID: 100100000, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+--- !u!1 &409952556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6909317047072651052, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+  m_PrefabInstance: {fileID: 1544454826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &409952562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409952556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
+--- !u!114 &409952563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409952556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &411325099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,6 +3301,8 @@ GameObject:
   - component: {fileID: 562501571}
   - component: {fileID: 562501570}
   - component: {fileID: 562501573}
+  - component: {fileID: 562501575}
+  - component: {fileID: 562501574}
   m_Layer: 5
   m_Name: ButtonUp
   m_TagString: Untagged
@@ -3381,6 +3468,37 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &562501574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562501568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &562501575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562501568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &572433526 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6519839159734037886, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
@@ -4405,6 +4523,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 1ae64d97bd22d63498ceafa95299ff0f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1053048630}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 1ae64d97bd22d63498ceafa95299ff0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053048633}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 1ae64d97bd22d63498ceafa95299ff0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1053048634}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 1ae64d97bd22d63498ceafa95299ff0f, type: 3}
 --- !u!4 &827694816 stripped
 Transform:
@@ -4721,6 +4845,37 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &857581682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857581673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &857581683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857581673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &873953740
 GameObject:
   m_ObjectHideFlags: 0
@@ -5552,6 +5707,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.002, y: 0.0005, z: 0.0027}
   m_Center: {x: -0.001, y: 0, z: 0.0014}
+--- !u!114 &975100191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975100185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &975100192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975100185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &979170877 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4652020058382193040, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
@@ -6245,6 +6431,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1053048633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053048629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1053048634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053048629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1001 &1060901286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6583,6 +6800,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 211280466716591218, guid: 1374ab092f8990d46bc9624116a73a5a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1904151400}
+    - targetCorrespondingSourceObject: {fileID: 211280466716591218, guid: 1374ab092f8990d46bc9624116a73a5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1904151402}
+    - targetCorrespondingSourceObject: {fileID: 211280466716591218, guid: 1374ab092f8990d46bc9624116a73a5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1904151403}
   m_SourcePrefab: {fileID: -4161369568681901532, guid: 1374ab092f8990d46bc9624116a73a5a, type: 3}
 --- !u!1 &1161150326
 GameObject:
@@ -8167,6 +8390,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514899652}
   m_Mesh: {fileID: 2212009239438826721, guid: 67958d3e121424645b5dae581d741a83, type: 3}
+--- !u!1 &1516042745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5510626256121344764, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+  m_PrefabInstance: {fileID: 1544454826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1516042751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516042745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1516042752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516042745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &1527802684
 GameObject:
   m_ObjectHideFlags: 0
@@ -8440,9 +8699,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1571726506414221295, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 857581677}
+    - targetCorrespondingSourceObject: {fileID: 1571726506414221295, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 857581682}
+    - targetCorrespondingSourceObject: {fileID: 1571726506414221295, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 857581683}
     - targetCorrespondingSourceObject: {fileID: 1706300010361561431, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
       insertIndex: -1
       addedObject: {fileID: 883788132}
+    - targetCorrespondingSourceObject: {fileID: 5510626256121344764, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1516042752}
+    - targetCorrespondingSourceObject: {fileID: 5510626256121344764, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1516042751}
+    - targetCorrespondingSourceObject: {fileID: 6909317047072651052, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 409952563}
+    - targetCorrespondingSourceObject: {fileID: 6909317047072651052, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 409952562}
   m_SourcePrefab: {fileID: 100100000, guid: 85455a09f18fece42b94c38f4e79c907, type: 3}
 --- !u!4 &1550411477 stripped
 Transform:
@@ -9646,6 +9923,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a2db4b3080b66f40a074e8e6a59ac13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 975100186}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a2db4b3080b66f40a074e8e6a59ac13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 975100191}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0a2db4b3080b66f40a074e8e6a59ac13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 975100192}
     - targetCorrespondingSourceObject: {fileID: 3231189886597301143, guid: 0a2db4b3080b66f40a074e8e6a59ac13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1380389570}
@@ -10262,6 +10545,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2215194, y: 3.1827378, z: 0.8044865}
   m_Center: {x: -1.1448528, y: 5.126568, z: -1.136637}
+--- !u!114 &1904151402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640725922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1904151403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640725922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &1921573552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2898216863245481431, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
@@ -10950,6 +11264,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 5e4beaa0703497b44b6b6aac48ebee45, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2131770747}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 5e4beaa0703497b44b6b6aac48ebee45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2131770749}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 5e4beaa0703497b44b6b6aac48ebee45, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2131770750}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 5e4beaa0703497b44b6b6aac48ebee45, type: 3}
 --- !u!4 &2043833386 stripped
 Transform:
@@ -12062,6 +12382,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.73625416, z: 1.790526}
   m_Center: {x: -0.0020677722, y: 0.13189809, z: 0.7069978}
+--- !u!114 &2131770749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131770745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &2131770750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131770745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!1 &347442399272183
 GameObject:
   m_ObjectHideFlags: 0
@@ -22706,6 +23057,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3118140924579166417, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
   m_PrefabInstance: {fileID: 2270022351615383659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1429735607247250078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979170877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 3
+  outlineColor: {r: 1, g: 0.84313726, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &1429735607247250079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979170877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aef20446d5a7ea458633c76888383ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NesneGorevVurgulama
+  bekleme_suresi: 0.5
 --- !u!4 &1438324833301943934
 Transform:
   m_ObjectHideFlags: 0
@@ -29571,6 +29953,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4652020058382193040, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1429735607247250076}
+    - targetCorrespondingSourceObject: {fileID: 4652020058382193040, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1429735607247250078}
+    - targetCorrespondingSourceObject: {fileID: 4652020058382193040, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1429735607247250079}
     - targetCorrespondingSourceObject: {fileID: 8074833062181637529, guid: 1e2bdf4cc4cb9e34bb76728157268ade, type: 3}
       insertIndex: -1
       addedObject: {fileID: 788183871593240901}
