@@ -149,7 +149,6 @@ GameObject:
   - component: {fileID: 8486736865127813606}
   - component: {fileID: 7525706920007308179}
   - component: {fileID: 6929072456798525362}
-  - component: {fileID: 7422614242381056939}
   - component: {fileID: 969506632909353470}
   m_Layer: 5
   m_Name: Panel
@@ -242,20 +241,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &7422614242381056939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4939484735407412629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!114 &969506632909353470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +255,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   gorevSatiriPrefab: {fileID: 5371475906521268854, guid: a31bc4c9fe3c4cc48abc06595538cdfa, type: 3}
   panel: {fileID: 6601431522127113897}
+  baslikText: {fileID: 0}
+  onluk: {fileID: 0}
+  eldiven: {fileID: 0}
+  ayakkabi: {fileID: 0}
+  "b\xFCy\xFCkLiftUpBtn": {fileID: 0}
+  kucukLift: {fileID: 0}
+  kucukLiftHolder: {fileID: 0}
+  kucukLiftUpBtn: {fileID: 0}
+  kucukLiftDownBtn: {fileID: 0}
+  soketler: {fileID: 0}
+  matkap: {fileID: 0}
+  termalKamera: {fileID: 0}
+  vidalar: []
 --- !u!1 &7365663391906897009
 GameObject:
   m_ObjectHideFlags: 0

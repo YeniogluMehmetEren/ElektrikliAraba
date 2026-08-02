@@ -22,6 +22,15 @@ public class GorevPaneliUI : MonoBehaviour
     [SerializeField] private NesneGorevVurgulama onluk;
     [SerializeField] private NesneGorevVurgulama eldiven;
     [SerializeField] private NesneGorevVurgulama ayakkabi;
+    [SerializeField] private NesneGorevVurgulama büyükLiftUpBtn;
+    [SerializeField] private NesneGorevVurgulama kucukLift;
+    [SerializeField] private GameObject kucukLiftHolder;
+    [SerializeField] private NesneGorevVurgulama kucukLiftUpBtn;
+    [SerializeField] private NesneGorevVurgulama kucukLiftDownBtn;
+    [SerializeField] private NesneGorevVurgulama soketler;
+    [SerializeField] private NesneGorevVurgulama matkap;
+    [SerializeField] private NesneGorevVurgulama termalKamera;
+    [SerializeField] private NesneGorevVurgulama[] vidalar;
     void Start()
     {
         chestTrigger = FindAnyObjectByType<ChestTrigger>();
@@ -29,7 +38,9 @@ public class GorevPaneliUI : MonoBehaviour
         feetTrigger = FindAnyObjectByType<FeetTrigger>();
 
         liftMovement = FindAnyObjectByType<LiftMovement>();
+        kucukLiftMovement = FindAnyObjectByType<LiftAnimationController>();
 
+        kucukLiftHolder.SetActive(false);
         kucukLiftTemas = FindAnyObjectByType<LiftTemasKontrol>();
 
         soketTakmaCýkartma = FindAnyObjectByType<SoketTakmaCýkartma>();
@@ -40,8 +51,8 @@ public class GorevPaneliUI : MonoBehaviour
 
 
         StartCoroutine(SetGorevGiysiGiy());
-        
-        //StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
+        //StartCoroutine(SetGorevSicaklikKontolEtVerileriGir());
+
         /*
         SetGorevGiysiGiy();
         SetGorevAracýYukarýKaldýr();
@@ -53,6 +64,7 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevGiysiGiy()
     {
+        baslikText.text = "Koruyucu Giysileri Giy";
         GameObject yeniPrefebOnluk = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduOnluk = yeniPrefebOnluk.GetComponent<GorevSatiriRowUI>();
         satirKoduOnluk.gorevYazisi.text = "Önlük Giy.";
@@ -67,35 +79,34 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduAyakkabi.toggleTamamlandiMi.isOn = false;
 
         onluk.GorevBasladi();
-
-        while (!chestTrigger.giysiGiyildiMi)
-        {
-            yield return null;
-        }
-
-        satirKoduOnluk.toggleTamamlandiMi.isOn = true;
-        onluk.GorevBitti();
-
         eldiven.GorevBasladi();
-
-        while (!gloveTrigger.eldivenGiyildiMi)
-        {
-            yield return null;
-        }
-
-        satirKoduEldiven.toggleTamamlandiMi.isOn = true;
-        eldiven.GorevBitti();
-
         ayakkabi.GorevBasladi();
 
-      
-        while (!feetTrigger.ayakkabiGiyildiMi)
+        while (!chestTrigger.giysiGiyildiMi || !gloveTrigger.eldivenGiyildiMi || !feetTrigger.ayakkabiGiyildiMi)
         {
+            if (chestTrigger.giysiGiyildiMi)
+            {
+                satirKoduOnluk.toggleTamamlandiMi.isOn = true;
+                onluk.GorevBitti();
+            }
+            if (gloveTrigger.eldivenGiyildiMi)
+            {
+                satirKoduEldiven.toggleTamamlandiMi.isOn = true;
+                eldiven.GorevBitti();
+            }
+            if (feetTrigger.ayakkabiGiyildiMi)
+            {
+                satirKoduAyakkabi.toggleTamamlandiMi.isOn = true;
+                ayakkabi.GorevBitti();
+            }
             yield return null;
         }
-
+        satirKoduOnluk.toggleTamamlandiMi.isOn = true;
+        satirKoduEldiven.toggleTamamlandiMi.isOn = true;
         satirKoduAyakkabi.toggleTamamlandiMi.isOn = true;
         ayakkabi.GorevBitti();
+        eldiven.GorevBitti();
+        onluk.GorevBitti();
 
         yeniPrefebOnluk.SetActive(false);
         yeniPrefebAyakkabi.SetActive(false);
@@ -106,11 +117,13 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevAracýYukarýKaldýr()
     {
+        baslikText.text = "Aracý Yukarý Kaldýr";
         GameObject yeniPrefebAracKaldýrma = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduAracKaldýrma = yeniPrefebAracKaldýrma.GetComponent<GorevSatiriRowUI>();
         satirKoduAracKaldýrma.gorevYazisi.text = "Aracý, tuþlarý kullanarak yukarý kaldýr.";
         satirKoduAracKaldýrma.toggleTamamlandiMi.isOn = false;
 
+        büyükLiftUpBtn.GorevBasladi();
         while (!liftMovement.liftEnYukardaMi)
         {
             if (liftMovement.liftEnYukardaMi)
@@ -120,6 +133,7 @@ public class GorevPaneliUI : MonoBehaviour
             yield return null;
         }
         satirKoduAracKaldýrma.toggleTamamlandiMi.isOn = true;
+        büyükLiftUpBtn.GorevBitti();
 
         yeniPrefebAracKaldýrma.SetActive(false);
 
@@ -128,6 +142,7 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevKucukLiftiGetirYukarýKaldýr()
     {
+        baslikText.text = "Lifti Ayarla";
         GameObject yeniPrefebLiftiGetir = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduLiftiGetir = yeniPrefebLiftiGetir.GetComponent<GorevSatiriRowUI>();
         satirKoduLiftiGetir.gorevYazisi.text = "Lifti bataryanýn altýna getir.";
@@ -137,7 +152,14 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduLiftiKaldir.gorevYazisi.text = "Lifti yukarý kaldýr.";
         satirKoduLiftiKaldir.toggleTamamlandiMi.isOn = false;
 
-        while (!kucukLiftTemas.Bataryaya_temas_ediyormu) // yeniPrefebLiftiGetir þuanlýk yok çünkü altýna getirildiðini algýlayan kod yok. eklenecek
+        kucukLift.GorevBasladi();
+        kucukLiftHolder.SetActive(true);
+        // yeniPrefebLiftiGetir þuanlýk yok çünkü altýna getirildiðini algýlayan kod yok. eklenecek
+        satirKoduLiftiGetir.toggleTamamlandiMi.isOn = true;
+        kucukLift.GorevBitti();
+
+        kucukLiftUpBtn.GorevBasladi();
+        while (!kucukLiftTemas.Bataryaya_temas_ediyormu) 
         {
             if (kucukLiftTemas.Bataryaya_temas_ediyormu)
             {
@@ -145,7 +167,7 @@ public class GorevPaneliUI : MonoBehaviour
             }
             yield return null;
         }
-        satirKoduLiftiGetir.toggleTamamlandiMi.isOn = true;
+        kucukLiftUpBtn.GorevBitti();
         satirKoduLiftiKaldir.toggleTamamlandiMi.isOn = true;
 
         yeniPrefebLiftiGetir.SetActive(false);
@@ -156,6 +178,7 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevSoketleriVeVidalariCikartBataryayiIndir()
     {
+        baslikText.text = "Bataryayý Sök ve Ýndir";
         GameObject yeniPrefebSoketleriCikart = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduSoketleriCikart = yeniPrefebSoketleriCikart.GetComponent<GorevSatiriRowUI>();
         satirKoduSoketleriCikart.gorevYazisi.text = "Bataryanýn önünde bulunan soketleri çýkart.";
@@ -173,24 +196,44 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduBataryayiIndir.gorevYazisi.text = "Lifti indirerek bataryayý aþaðýya indir.";
         satirKoduBataryayiIndir.toggleTamamlandiMi.isOn = false;
 
+        soketler.GorevBasladi(); matkap.GorevBasladi();
+        foreach(NesneGorevVurgulama vida in vidalar)
+        {
+            vida.GorevBasladi();
+        }
         while (!soketTakmaCýkartma.TumSoketlerSokulduMu || !boltRemover.matkapTutulduMu || !boltRemover.VidalarinHepsiSokulduMu())
         {
             if (soketTakmaCýkartma.TumSoketlerSokulduMu)
             {
                 satirKoduSoketleriCikart.toggleTamamlandiMi.isOn = true;
+                soketler.GorevBitti();
             }
             if (boltRemover.matkapTutulduMu)
             {
                 satirKoduMatkapiAl.toggleTamamlandiMi.isOn = true;
+                matkap.GorevBitti();
             }
             satirKoduVidalariCikart.gorevYazisi.text = "Bataryanýn etrafýnda bulunan vidalarý sök.  " + boltRemover.GetKacVidaSokuldu() + "/13";
             if (boltRemover.VidalarinHepsiSokulduMu())
             {
                 satirKoduVidalariCikart.toggleTamamlandiMi.isOn = true;
+                foreach (NesneGorevVurgulama vida in vidalar)
+                {
+                    vida.GorevBitti();
+                }
             }
             yield return null;
         }
+        soketler.GorevBitti(); matkap.GorevBitti();
+        foreach (NesneGorevVurgulama vida in vidalar)
+        {
+            vida.GorevBitti();
+        }
+        satirKoduSoketleriCikart.toggleTamamlandiMi.isOn = true;
+        satirKoduMatkapiAl.toggleTamamlandiMi.isOn = true;
+        satirKoduVidalariCikart.toggleTamamlandiMi.isOn = true;
 
+        kucukLiftDownBtn.GorevBasladi();
         while (!kucukLiftMovement.BataryaAlýnýpAþaðýyaIndiMi())
         {
             if (kucukLiftMovement.BataryaAlýnýpAþaðýyaIndiMi())
@@ -199,10 +242,8 @@ public class GorevPaneliUI : MonoBehaviour
             }
             yield return null;
         }
-        satirKoduSoketleriCikart.toggleTamamlandiMi.isOn = true;
-        satirKoduMatkapiAl.toggleTamamlandiMi.isOn = true;
-        satirKoduVidalariCikart.toggleTamamlandiMi.isOn = true;
         satirKoduBataryayiIndir.toggleTamamlandiMi.isOn = true;
+        kucukLiftDownBtn.GorevBitti();
 
         yeniPrefebSoketleriCikart.SetActive(false);
         yeniPrefebMatkapiAl.SetActive(false);
@@ -214,6 +255,7 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevSicaklikKontolEtVerileriGir()
     {
+        baslikText.text = "Verileri Not Al";
         GameObject yeniPrefebTermaliAl = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduTermaliAl = yeniPrefebTermaliAl.GetComponent<GorevSatiriRowUI>();
         satirKoduTermaliAl.gorevYazisi.text = "Termal kamerayý eline al.";
@@ -231,11 +273,13 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduSonucaGec.gorevYazisi.text = "Gün 3'ün verilerini kaydet ve sonuçlarýný gör.";
         satirKoduSonucaGec.toggleTamamlandiMi.isOn = false;
 
+        termalKamera.GorevBasladi(); 
         while (!fLIRController.termalTutulduMu || !uiBataryaVeriGirisi.gun2GecildiMi || !uiBataryaVeriGirisi.gun3GecildiMi || !uiBataryaVeriGirisi.sonucGecildiMi)
         {
             if (fLIRController.termalTutulduMu)
             {
                 satirKoduTermaliAl.toggleTamamlandiMi.isOn = true;
+                termalKamera.GorevBitti();
             }
             if (uiBataryaVeriGirisi.gun2GecildiMi)
             {
@@ -255,6 +299,7 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduGun2Gec.toggleTamamlandiMi.isOn = true;
         satirKoduGun3Gec.toggleTamamlandiMi.isOn = true;
         satirKoduSonucaGec.toggleTamamlandiMi.isOn = true;
+        termalKamera.GorevBitti();
 
         yeniPrefebTermaliAl.SetActive(false);
         yeniPrefebGun2Gec.SetActive(false);
