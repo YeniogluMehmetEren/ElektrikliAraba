@@ -7,6 +7,8 @@ public class LiftYuvasi : MonoBehaviour
     [SerializeField] private XRSocketInteractor lift_yuvasi;
     [SerializeField] private GameObject sari_alan;
 
+    public bool liftAlandaMi = false;
+
     private void Start()
     {
         if (sari_alan != null)
@@ -40,6 +42,9 @@ public class LiftYuvasi : MonoBehaviour
     private void LiftBirakildi(SelectEnterEventArgs args)
     {
         if (sari_alan != null)
+        {
             sari_alan.SetActive(false);
+            liftAlandaMi = true;
+        }
     }
 }

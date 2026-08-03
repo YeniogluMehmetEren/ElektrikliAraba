@@ -79,8 +79,8 @@ public class RowUretme : MonoBehaviour
             ScrollViewSonucRowUI satirKodu = yeniSatir.GetComponent<ScrollViewSonucRowUI>();
             if (satirKodu != null)
             {
+                //SicaklikRenkDegistir(satirKodu);
                 satirKodu.SatiriKur(item.cell_id.ToString(), item.birinci_sicaklik.ToString() + " °C");
-                SicaklikRenkDegistir(satirKodu);
             }
         }
         if (item.ikinci_sicaklik >= 35)
@@ -89,8 +89,8 @@ public class RowUretme : MonoBehaviour
             ScrollViewSonucRowUI satirKodu = yeniSatir.GetComponent<ScrollViewSonucRowUI>();
             if (satirKodu != null)
             {
+                //SicaklikRenkDegistir(satirKodu);
                 satirKodu.SatiriKur(item.cell_id.ToString(), item.ikinci_sicaklik.ToString() + " °C");
-                SicaklikRenkDegistir(satirKodu);
             }
         }
         if (item.ucuncu_sicaklik >= 35)
@@ -99,13 +99,14 @@ public class RowUretme : MonoBehaviour
             ScrollViewSonucRowUI satirKodu = yeniSatir.GetComponent<ScrollViewSonucRowUI>();
             if (satirKodu != null)
             {
+                //SicaklikRenkDegistir(satirKodu);
                 satirKodu.SatiriKur(item.cell_id.ToString(), item.ucuncu_sicaklik.ToString() + " °C");
-                SicaklikRenkDegistir(satirKodu);
             }
         }
     }
     void SicaklikRenkDegistir(ScrollViewSonucRowUI satir)
     {
+        Debug.Log(satir.tempText.text);
         if (float.Parse(satir.tempText.text) >= 55f)
             satir.tempText.color = Color.red;
         else if (float.Parse(satir.tempText.text) >= 35f)

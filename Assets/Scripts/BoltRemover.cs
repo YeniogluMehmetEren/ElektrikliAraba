@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
-using static UnityEngine.Rendering.GPUSort;
 
 public class BoltRemover : MonoBehaviour
 {
@@ -38,15 +37,18 @@ public class BoltRemover : MonoBehaviour
             {
                 if (other == vida.etkilesimAlani)
                 {
+                    if (vida.islemDevamEdiyor)
+                    {
+                        continue;
+                    }
+
                     if (vida.takiliMi)
                     {
                         StartCoroutine(VidayiSok(vida));
-                        kacVidaSokuldu++;
                     }
                     else
                     {
                         StartCoroutine(VidayiTak(vida));
-                        kacVidaSokuldu--;
                     }
                 }
             }
@@ -75,6 +77,7 @@ public class BoltRemover : MonoBehaviour
         }
         vida.vidaGO.SetActive(false);
         vida.takiliMi = false;
+        kacVidaSokuldu++;
         vida.islemDevamEdiyor = false;
     }
 
@@ -100,6 +103,7 @@ public class BoltRemover : MonoBehaviour
 
         vida.vidaGO.transform.position = vida.ilkPozisyon;
         vida.takiliMi = true;
+        kacVidaSokuldu--;
         vida.islemDevamEdiyor = false;
     }
 

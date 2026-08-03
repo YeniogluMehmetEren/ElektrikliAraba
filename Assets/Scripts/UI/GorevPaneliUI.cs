@@ -18,6 +18,7 @@ public class GorevPaneliUI : MonoBehaviour
     private LiftAnimationController kucukLiftMovement;
     private FLIRController fLIRController;
     private UIBataryaVeriGirisi uiBataryaVeriGirisi;
+    private LiftYuvasi liftYuvasý;
 
     [SerializeField] private NesneGorevVurgulama onluk;
     [SerializeField] private NesneGorevVurgulama eldiven;
@@ -31,34 +32,33 @@ public class GorevPaneliUI : MonoBehaviour
     [SerializeField] private NesneGorevVurgulama matkap;
     [SerializeField] private NesneGorevVurgulama termalKamera;
     [SerializeField] private NesneGorevVurgulama[] vidalar;
+
     void Start()
     {
         chestTrigger = FindAnyObjectByType<ChestTrigger>();
         gloveTrigger = FindAnyObjectByType<GloveWear>();
         feetTrigger = FindAnyObjectByType<FeetTrigger>();
-
         liftMovement = FindAnyObjectByType<LiftMovement>();
         kucukLiftMovement = FindAnyObjectByType<LiftAnimationController>();
-
-        kucukLiftHolder.SetActive(false);
+        liftYuvasý = FindAnyObjectByType<LiftYuvasi>();
         kucukLiftTemas = FindAnyObjectByType<LiftTemasKontrol>();
-
         soketTakmaCýkartma = FindAnyObjectByType<SoketTakmaCýkartma>();
         boltRemover = FindAnyObjectByType<BoltRemover>();
-
         fLIRController = FindAnyObjectByType<FLIRController>();
         uiBataryaVeriGirisi = FindAnyObjectByType<UIBataryaVeriGirisi>();
 
+        kucukLiftHolder.SetActive(false);
 
         StartCoroutine(SetGorevGiysiGiy());
-        //StartCoroutine(SetGorevSicaklikKontolEtVerileriGir());
+        
+        //StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
 
-        /*
+        /* GÖREV SIRASI
         SetGorevGiysiGiy();
         SetGorevAracýYukarýKaldýr();
         SetGorevKucukLiftiGetirYukarýKaldýr();
-        SetGorevSoketleriVeVidalariCýkartBataryayýIndir();
-        SetGorevSýcaklýkKontolEtVerileriGir();
+        SetGorevSoketleriVeVidalariCikartBataryayiIndir();
+        SetGorevSicaklikKontolEtVerileriGir();
         */
     }
 
@@ -77,11 +77,10 @@ public class GorevPaneliUI : MonoBehaviour
         GorevSatiriRowUI satirKoduAyakkabi = yeniPrefebAyakkabi.GetComponent<GorevSatiriRowUI>();
         satirKoduAyakkabi.gorevYazisi.text = "Ayakkabýlarý Giy.";
         satirKoduAyakkabi.toggleTamamlandiMi.isOn = false;
-
+        
         onluk.GorevBasladi();
         eldiven.GorevBasladi();
         ayakkabi.GorevBasladi();
-
         while (!chestTrigger.giysiGiyildiMi || !gloveTrigger.eldivenGiyildiMi || !feetTrigger.ayakkabiGiyildiMi)
         {
             if (chestTrigger.giysiGiyildiMi)
@@ -107,7 +106,7 @@ public class GorevPaneliUI : MonoBehaviour
         ayakkabi.GorevBitti();
         eldiven.GorevBitti();
         onluk.GorevBitti();
-
+        
         yeniPrefebOnluk.SetActive(false);
         yeniPrefebAyakkabi.SetActive(false);
         yeniPrefebEldiven.SetActive(false);
@@ -154,7 +153,14 @@ public class GorevPaneliUI : MonoBehaviour
 
         kucukLift.GorevBasladi();
         kucukLiftHolder.SetActive(true);
-        // yeniPrefebLiftiGetir þuanlýk yok çünkü altýna getirildiðini algýlayan kod yok. eklenecek
+        while (!liftYuvasý.liftAlandaMi)
+        {
+            if (liftYuvasý.liftAlandaMi)
+            {
+                satirKoduLiftiGetir.toggleTamamlandiMi.isOn = true;
+            }
+            yield return null;
+        }
         satirKoduLiftiGetir.toggleTamamlandiMi.isOn = true;
         kucukLift.GorevBitti();
 
