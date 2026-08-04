@@ -16,8 +16,13 @@ public class TermalBilgiOkuyucu : MonoBehaviour
     [SerializeField] 
     private float maxIsinMesafe = 3f;
 
+    private UIBataryaVeriGirisi veriKaydetme;
 
 
+    private void Start()
+    {
+        veriKaydetme = FindAnyObjectByType<UIBataryaVeriGirisi>();
+    }
 
     private void OnEnable()
     {
@@ -62,6 +67,10 @@ public class TermalBilgiOkuyucu : MonoBehaviour
             if (hucre != null)
             {
                 BilgiyiGoster(hucre);
+                BatteryGridManager batteryGridManager = FindAnyObjectByType<BatteryGridManager>();
+                batteryGridManager.IDBulSicaklikGuncelle(hucre.cell_id, hucre.mevcut_sicaklik.ToString());
+                BatteryCellUI batteryCellUIHücresi = batteryGridManager.BataryaDegiskenleriToUIBatteryCell(hucre);
+                veriKaydetme.AddBatteryData(batteryCellUIHücresi);
             }
             else
             {

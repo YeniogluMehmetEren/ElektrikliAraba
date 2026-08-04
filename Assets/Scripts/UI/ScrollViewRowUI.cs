@@ -32,12 +32,14 @@ public class ScrollViewRowUI : MonoBehaviour
             if (eskiID == Convert.ToInt32(idDropdown.text))
             {
                 BatteryCellUIGonderme(Convert.ToInt32(idDropdown.text), tempText.text);
-                BatteryCellUI yeniHucre = gridManager.IDdenHucreBulma(Convert.ToInt32(idDropdown.text)); veriKaydetme.AddBatteryData(yeniHucre);
+                BatteryCellUI yeniHucre = gridManager.IDdenHucreBulma(Convert.ToInt32(idDropdown.text)); 
+                veriKaydetme.AddBatteryData(yeniHucre);
             }
             else
             {
                 BatteryCellUIGonderme(Convert.ToInt32(idDropdown.text), tempText.text);
-                BatteryCellUI yeniHucre = gridManager.IDdenHucreBulma(Convert.ToInt32(idDropdown.text)); veriKaydetme.AddBatteryData(yeniHucre);
+                BatteryCellUI yeniHucre = gridManager.IDdenHucreBulma(Convert.ToInt32(idDropdown.text)); 
+                veriKaydetme.AddBatteryData(yeniHucre);
                 BatteryCellUIGonderme(eskiID, "Bilinmiyor");
                 BatteryCellUI eskiHucre = gridManager.IDdenHucreBulma(eskiID); veriKaydetme.DeleteBatteryData(eskiHucre);
                 eskiID = Convert.ToInt32(idDropdown.text);

@@ -85,4 +85,14 @@ public class BatteryGridManager : MonoBehaviour
         }
         return null;
     }
+
+    public BatteryCellUI BataryaDegiskenleriToUIBatteryCell(BataryaDegiskenleri hucre)
+    {
+        BatteryCellUI batteryCellUIHücresi = IDdenHucreBulma(hucre.cell_id);
+        if (batteryCellUIHücresi != null)
+        {
+            return batteryCellUIHücresi;
+        }
+        return null;
+    }
 }
