@@ -4,7 +4,7 @@ using UnityEngine;
 public class LiftAnimationController : MonoBehaviour
 {
     private Animator animator;
-
+    [SerializeField] private AudioSource lift_ses;
     [SerializeField] private BataryaSokTak bataryaSokTak;
     [SerializeField] private LiftTemasKontrol temasKontrol;
 
@@ -40,10 +40,24 @@ public class LiftAnimationController : MonoBehaviour
         animator.Update(0);
 
         if (animasyon_konumu <= 0f)
+        {
             hareket_yonu = 0;
 
+            if (lift_ses != null && lift_ses.isPlaying)
+            {
+                lift_ses.Stop();
+            }
+        }
+
         if (animasyon_konumu >= 1f)
+        {
             hareket_yonu = 0;
+
+            if (lift_ses != null && lift_ses.isPlaying)
+            {
+                lift_ses.Stop();
+            }
+        }
     }
 
     public void ButtonUpPressed()
@@ -58,26 +72,50 @@ public class LiftAnimationController : MonoBehaviour
         }
 
         hareket_yonu = 1;
+        if (lift_ses != null && !lift_ses.isPlaying)
+        {
+            lift_ses.Play();
+        }
     }
 
     public void ButtonUpReleased()
     {
         hareket_yonu = 0;
+
+        if (lift_ses != null && lift_ses.isPlaying)
+        {
+            lift_ses.Stop();
+        }
     }
 
     public void ButtonDownPressed()
     {
         hareket_yonu = -1;
+        if (lift_ses != null && !lift_ses.isPlaying)
+        {
+            lift_ses.Play();
+        }
+            
     }
 
     public void ButtonDownReleased()
     {
         hareket_yonu = 0;
+        
+        if (lift_ses != null && lift_ses.isPlaying)
+        {
+            lift_ses.Stop();
+        }
     }
 
     public void HareketiDurdur()
     {
         hareket_yonu = 0;
+
+        if (lift_ses != null && lift_ses.isPlaying)
+        {
+            lift_ses.Stop();
+        }
     }
 
     public bool BataryaAlınıpAşağıyaIndiMi()

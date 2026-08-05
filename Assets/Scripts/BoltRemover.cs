@@ -14,6 +14,8 @@ public class BoltRemover : MonoBehaviour
     [Header("Tüm Vidalarýn Listesi")]
     public List<Vidalar> tumVidalar;
 
+    [SerializeField] private AudioSource matkap_ses;
+
     public int kacVidaSokuldu = 0;
 
     public bool matkapTutulduMu = false;
@@ -62,6 +64,11 @@ public class BoltRemover : MonoBehaviour
     {
         vida.islemDevamEdiyor = true;
 
+        if (matkap_ses != null && !matkap_ses.isPlaying)
+        {
+            matkap_ses.Play();
+        }
+
         float gecenZaman = 0f;
         Vector3 baslangicNoktasi = vida.ilkPozisyon;
         Vector3 hedefNokta = vida.ilkPozisyon + (Vector3.down * asagiInmeMesafesi);
@@ -79,11 +86,21 @@ public class BoltRemover : MonoBehaviour
         vida.takiliMi = false;
         kacVidaSokuldu++;
         vida.islemDevamEdiyor = false;
+
+        if (matkap_ses != null && matkap_ses.isPlaying)
+        {
+            matkap_ses.Stop();
+        }
     }
 
     private IEnumerator VidayiTak(Vidalar vida)
     {
         vida.islemDevamEdiyor = true;
+
+        if (matkap_ses != null && !matkap_ses.isPlaying)
+        {
+            matkap_ses.Play();
+        }
         vida.vidaGO.SetActive(true);
 
         float gecenZaman = 0f;
@@ -105,6 +122,10 @@ public class BoltRemover : MonoBehaviour
         vida.takiliMi = true;
         kacVidaSokuldu--;
         vida.islemDevamEdiyor = false;
+        if (matkap_ses != null && matkap_ses.isPlaying)
+        {
+            matkap_ses.Stop();
+        }
     }
 
     public bool VidalarinHepsiSokulduMu()
