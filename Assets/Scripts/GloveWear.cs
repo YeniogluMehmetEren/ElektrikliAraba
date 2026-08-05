@@ -1,9 +1,13 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class GloveWear : MonoBehaviour
 {
+    public AudioSource ses_kaynagı;
+    public AudioClip giyme_sesi;
+
     [Header("Hand Meshes")]
     public SkinnedMeshRenderer leftHand;
     public SkinnedMeshRenderer rightHand;
@@ -14,37 +18,40 @@ public class GloveWear : MonoBehaviour
     private bool equipped = false;
     public bool eldivenGiyildiMi = false;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (equipped)
             return;
 
-        // Eldivenin XR Grab'ını bul
         XRGrabInteractable grab =
             other.GetComponentInParent<XRGrabInteractable>();
 
         if (grab == null)
             return;
 
-        // Eldiven mi?
         if (!grab.CompareTag("Glove"))
             return;
 
-        // Kullanıcı gerçekten tutuyor mu?
         if (!grab.isSelected)
             return;
 
         equipped = true;
         eldivenGiyildiMi = true;
 
-        // İki ele de eldiven materyalini uygula
         leftHand.material = gloveMaterial;
         rightHand.material = gloveMaterial;
 
-        // Tutulan eldiveni yok et
-        grab.gameObject.SetActive(false);
+        StartCoroutine(EldiveniGiy(grab));
+    }
 
-        Debug.Log("Koruyucu eldiven giyildi.");
+    private IEnumerator EldiveniGiy(XRGrabInteractable grab)
+    {
+        if (ses_kaynagı != null && giyme_sesi != null)
+        {
+            ses_kaynagı.PlayOneShot(giyme_sesi);
+            yield return new WaitForSeconds(giyme_sesi.length);
+        }
+
+        grab.gameObject.SetActive(false);
     }
 }
