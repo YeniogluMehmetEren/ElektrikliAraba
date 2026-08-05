@@ -80,5 +80,18 @@ public class FLIRController : MonoBehaviour
             return;
         }
         termalTutulduMu = true;
+
+        thermalMode = false;
+
+        normalCamera.enabled = true;
+        thermalCamera.enabled = false;
+
+        modeText.text = "MODE : NORMAL";
+
+        if (termalBilgiOkuyucu != null)
+        {
+            termalBilgiOkuyucu.enabled = false;
+            termalBilgiOkuyucu.IsiniKapat();
+        }
     }
 }
