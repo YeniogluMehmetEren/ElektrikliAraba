@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -5,6 +6,10 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class ChestTrigger : MonoBehaviour
 {
     public bool giysiGiyildiMi = false;
+
+    public AudioSource ses_kaynagı;
+    public AudioClip giyme_sesi;
+
     private void OnTriggerEnter(Collider other)
     {
         XRGrabInteractable grab =
@@ -13,17 +18,23 @@ public class ChestTrigger : MonoBehaviour
         if (grab == null)
             return;
 
-        // Önlük mü?
         if (!grab.CompareTag("Apron"))
             return;
 
-        // Elde tutuluyor mu?
         if (!grab.isSelected)
             return;
 
-        Debug.Log("Güvenlik önlüğü giyildi.");
-
         giysiGiyildiMi = true;
+
+        StartCoroutine(Giydir(grab));
+    }
+
+    private IEnumerator Giydir(XRGrabInteractable grab)
+    {
+        ses_kaynagı.PlayOneShot(giyme_sesi);
+
+        yield return new WaitForSeconds(giyme_sesi.length);
+
         grab.gameObject.SetActive(false);
     }
 }
