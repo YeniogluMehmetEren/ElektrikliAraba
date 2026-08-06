@@ -10,5 +10,6 @@ public class BataryaDegiskenleri : MonoBehaviour
 
     public float mevcut_sicaklik;
     public HucreDurumu hucre_durumu;
+    public HucreDurumu secilen_hucre_durumu;
 }
 

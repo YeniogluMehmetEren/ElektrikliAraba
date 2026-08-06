@@ -17,7 +17,6 @@ public class BatteryCellUI : MonoBehaviour
     public Color olculmediRenk = Color.gray;
 
     public int hucreID;
-    public string hucreDurum;
 
     public int GetHucreID() {  return hucreID; }
     public void Setup(int id)

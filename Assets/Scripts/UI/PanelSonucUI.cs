@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PanelSonucUI : MonoBehaviour
 {
+    public GameObject panel;
+    public GameObject sonPanel;
     public TextMeshProUGUI IDgun1;
     public TextMeshProUGUI IDgun2;
     public TextMeshProUGUI IDgun3;
@@ -16,6 +18,8 @@ public class PanelSonucUI : MonoBehaviour
     private List<BatteryCellUI> Gun1Degerleri;
     private List<BatteryCellUI> Gun2Degerleri;
     private List<BatteryCellUI> Gun3Degerleri;
+    
+    private BataryaDegiskenleri[] karsilastirilacakHucreler;
 
     void Start()
     {
@@ -23,13 +27,25 @@ public class PanelSonucUI : MonoBehaviour
         Gun1Degerleri = uIBataryaVeriGirisi.batteryCellDataGun1;
         Gun2Degerleri = uIBataryaVeriGirisi.batteryCellDataGun2;
         Gun3Degerleri = uIBataryaVeriGirisi.batteryCellDataGun3;
+
+        BataryaYoneticisi bataryaYoneticisi = FindAnyObjectByType<BataryaYoneticisi>();
+        karsilastirilacakHucreler = bataryaYoneticisi.hucreler;
+
         IDyeGoreSatirDoldur(hangiID); //Baþladýðý gibi ilk id 1i doldurmuyodu direkt id 1i oldursun diye 
     }
 
     public void SonrakiIDyeGeç()
     {
         HangiIDArttir();
-        IDyeGoreSatirDoldur(hangiID);
+        if (hangiID > 12)
+        {
+            sonPanel.SetActive(true);
+            panel.SetActive(false);
+        }
+        else
+        {
+            IDyeGoreSatirDoldur(hangiID);
+        } 
     }
 
     public void IDyeGoreSatirDoldur(int ID)
@@ -65,17 +81,29 @@ public class PanelSonucUI : MonoBehaviour
 
     public void BtnNormalBasildi()
     {
-        //Durmunu kaydeden kod yazýlýcak kafam çok karýþýk
+        SetHucreDurumu(HucreDurumu.Normal);
         SonrakiIDyeGeç();
     }
     public void BtnUyariBasildi()
     {
-
+        SetHucreDurumu(HucreDurumu.Uyarý);
         SonrakiIDyeGeç();
     }
     public void BtnKritikBasildi()
     {
-        
+        SetHucreDurumu(HucreDurumu.Kritik);
         SonrakiIDyeGeç();
+    }
+
+    void SetHucreDurumu(HucreDurumu durum)  
+    {
+        foreach (var item in karsilastirilacakHucreler)
+        {
+            if (item.cell_id == hangiID)
+            {
+                item.secilen_hucre_durumu = durum;
+                Debug.Log("ID : " + item.cell_id + " / Durum : " + item.hucre_durumu + " / Atanan Durum : " + durum);
+            }
+        }
     }
 }

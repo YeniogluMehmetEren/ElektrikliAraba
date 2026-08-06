@@ -7,7 +7,7 @@ public class BataryaYoneticisi : MonoBehaviour
 
 
     private HucreSicakligi[] hucreSicakliklari;
-    private BataryaDegiskenleri[] hucreler;
+    public BataryaDegiskenleri[] hucreler;
 
     private int mevcut_gun = 1;
 
