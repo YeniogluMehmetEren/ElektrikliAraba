@@ -2032,6 +2032,10 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 969506632909353470, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
+      propertyPath: egitim_ses_yoneticisi
+      value: 
+      objectReference: {fileID: 387747883}
+    - target: {fileID: 969506632909353470, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
       propertyPath: 'vidalar.Array.data[0]'
       value: 
       objectReference: {fileID: 2025957154}
@@ -2887,6 +2891,164 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!1 &387747882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387747885}
+  - component: {fileID: 387747884}
+  - component: {fileID: 387747883}
+  m_Layer: 0
+  m_Name: EgitimSesYoneticisi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &387747883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387747882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c743116b99c428e4ab548d150d034f9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EgitimSesYoneticisi
+  sesKaynagi: {fileID: 387747884}
+  gorev_tamamlandi: {fileID: 0}
+  koruyucu_ekipman_giyme: {fileID: 8300000, guid: 067f32d6ea715be4a9e5ca53d411df2e, type: 3}
+  araci_yukari_kaldir: {fileID: 8300000, guid: 4864911ec1202d34284a0347ba73b35d, type: 3}
+  lifti_bataryanin_altina_getir: {fileID: 8300000, guid: 6e06f35b1c7682f41bebf3eff64f7f92, type: 3}
+  lifti_yukari_kaldir: {fileID: 8300000, guid: 5ca5f49ccf98fcb4a89313a5466ed2ad, type: 3}
+  soketleri_cikar: {fileID: 8300000, guid: bf49ac6e6074ead4bb3c4e40432c1396, type: 3}
+  matkabi_al: {fileID: 8300000, guid: 77919ade375bc904d88b28900e764526, type: 3}
+  vidalari_sok: {fileID: 8300000, guid: 823a7c3cea540234ea68ccef4b014662, type: 3}
+  bataryayi_indir: {fileID: 8300000, guid: 5e36285e41c625e45a4ee103c34f8898, type: 3}
+  termal_kamerayi_al: {fileID: 8300000, guid: d39e594ef1d2ef048b777bdcf447b24f, type: 3}
+  tum_hucreler_taramadi: {fileID: 8300000, guid: 1c16ad91992c6fe488fb78d3319cd157, type: 3}
+  birinci_gun: {fileID: 8300000, guid: 402f330b12a7670438f3b674bc1b4be8, type: 3}
+  ikinci_gun: {fileID: 8300000, guid: 803c1d078ce1d594382410f20e4d6ae3, type: 3}
+  ucuncu_gun: {fileID: 8300000, guid: 96febe023dcd4434093138886ab78c06, type: 3}
+  egitim_tamamlandi: {fileID: 8300000, guid: 43bd99aae8e71ae46be1285605ca873d, type: 3}
+--- !u!82 &387747884
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387747882}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2.5779648
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &387747885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387747882}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.86746, y: 0, z: -16.079}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &409672745 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86c35f4d8c74f3d4a9af1a8adf58866c, type: 3}
@@ -86812,3 +86974,4 @@ SceneRoots:
   - {fileID: 5984612852592442508}
   - {fileID: 307732573}
   - {fileID: 1430508765}
+  - {fileID: 387747885}
