@@ -161,8 +161,7 @@ public class GorevPaneliUI : MonoBehaviour
         GameObject yeniPrefebLiftiKaldir = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduLiftiKaldir = yeniPrefebLiftiKaldir.GetComponent<GorevSatiriRowUI>();
 
-        egitim_ses_yoneticisi.LiftiYukariKaldir();
-        yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
+
 
         satirKoduLiftiKaldir.gorevYazisi.text = "Lifti yukarý kaldýr.";
         satirKoduLiftiKaldir.toggleTamamlandiMi.isOn = false;
@@ -179,6 +178,9 @@ public class GorevPaneliUI : MonoBehaviour
         }
         satirKoduLiftiGetir.toggleTamamlandiMi.isOn = true;
         kucukLift.GorevBitti();
+
+        egitim_ses_yoneticisi.LiftiYukariKaldir();
+        yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
         kucukLiftUpBtn.GorevBasladi();
         while (!kucukLiftTemas.Bataryaya_temas_ediyormu) 
@@ -222,26 +224,37 @@ public class GorevPaneliUI : MonoBehaviour
         satirKoduBataryayiIndir.gorevYazisi.text = "Lifti indirerek bataryayý aþaðýya indir.";
         satirKoduBataryayiIndir.toggleTamamlandiMi.isOn = false;
 
-        soketler.GorevBasladi(); matkap.GorevBasladi();
-        foreach(NesneGorevVurgulama vida in vidalar)
-        {
-            vida.GorevBasladi();
-        }
+        soketler.GorevBasladi();
+
+        bool matkapBaslatildi = false;
+        bool vidalarBaslatildi = false;
+
         while (!soketTakmaCýkartma.TumSoketlerSokulduMu || !boltRemover.matkapTutulduMu || !boltRemover.VidalarinHepsiSokulduMu())
         {
-            if (soketTakmaCýkartma.TumSoketlerSokulduMu)
+            if (!matkapBaslatildi && soketTakmaCýkartma.TumSoketlerSokulduMu)
             {
+                matkapBaslatildi = true;
+
                 satirKoduSoketleriCikart.toggleTamamlandiMi.isOn = true;
                 soketler.GorevBitti();
 
                 egitim_ses_yoneticisi.MatkabiAl();
                 yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
-
+                matkap.GorevBasladi();
             }
-            if (boltRemover.matkapTutulduMu)
+            if (!vidalarBaslatildi && boltRemover.matkapTutulduMu)
             {
+
+                vidalarBaslatildi = true;
+
                 egitim_ses_yoneticisi.VidalariSok();
                 yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
+
+
+                foreach (NesneGorevVurgulama vida in vidalar)
+                {
+                    vida.GorevBasladi();
+                }
 
                 satirKoduMatkapiAl.toggleTamamlandiMi.isOn = true;
                 matkap.GorevBitti();
