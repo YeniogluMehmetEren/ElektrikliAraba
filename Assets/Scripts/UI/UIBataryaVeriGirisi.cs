@@ -8,38 +8,128 @@ public class UIBataryaVeriGirisi : MonoBehaviour
     public GameObject panelGun2;
     public GameObject panelGun3;
     public GameObject panelSonuc;
- 
+
     public List<BatteryCellUI> batteryCellDataGun1 = new List<BatteryCellUI>();
     public List<BatteryCellUI> batteryCellDataGun2 = new List<BatteryCellUI>();
     public List<BatteryCellUI> batteryCellDataGun3 = new List<BatteryCellUI>();
 
-    public int gun = 1; 
+    [SerializeField] private EgitimSesYoneticisi egitim_ses_yoneticisi;
+    [SerializeField] private BataryaYoneticisi batarya_yoneticisi;
+
+    public int gun = 1;
 
     public bool gun2GecildiMi = false;
     public bool gun3GecildiMi = false;
     public bool sonucGecildiMi = false;
+
+
+    private void Start()
+    {
+        batteryCellDataGun1.AddRange(
+            panelGun1.GetComponentsInChildren<BatteryCellUI>(true)
+        );
+
+    }
+
+
+    public void Gun2KontrolEt()
+    {
+        foreach (BatteryCellUI hucre in batteryCellDataGun1)
+        {
+            if (hucre.tempText.text.Contains("Bilinmiyor"))
+            {
+                egitim_ses_yoneticisi.TumHucrelerTaranmadi();
+                return;
+            }
+        }
+
+        batarya_yoneticisi.SonrakiGun();
+
+      
+
+        Gun2yeGec();
+
+        egitim_ses_yoneticisi.BirinciGun();
+    }
+
+
+    public void Gun3KontrolEt()
+    {
+        batteryCellDataGun2.AddRange(
+          panelGun2.GetComponentsInChildren<BatteryCellUI>(true)
+          );
+
+        foreach (BatteryCellUI hucre in batteryCellDataGun2)
+        {
+            if (hucre.tempText.text.Contains("Bilinmiyor"))
+            {
+                egitim_ses_yoneticisi.TumHucrelerTaranmadi();
+                return;
+            }
+        }
+
+        batarya_yoneticisi.SonrakiGun();
+
+      
+        Gun3eGec();
+
+        egitim_ses_yoneticisi.IkinciGun();
+    }
+
+
+    public void SonucKontrolEt()
+    {
+
+        batteryCellDataGun3.AddRange(
+         panelGun3.GetComponentsInChildren<BatteryCellUI>(true)
+           );
+
+
+        foreach (BatteryCellUI hucre in batteryCellDataGun3)
+        {
+            if (hucre.tempText.text.Contains("Bilinmiyor"))
+            {
+                egitim_ses_yoneticisi.TumHucrelerTaranmadi();
+                return;
+            }
+        }
+
+        SonucaGec();
+
+        egitim_ses_yoneticisi.UcuncuGun();
+    }
+
+
     public void Gun2yeGec()
     {
         panelGun1.SetActive(false);
         panelGun2.SetActive(true);
+
         gun = 2;
         gun2GecildiMi = true;
     }
+
+
     public void Gun3eGec()
     {
         panelGun2.SetActive(false);
         panelGun3.SetActive(true);
+
         gun = 3;
         gun3GecildiMi = true;
     }
+
+
     public void SonucaGec()
     {
         panelGun3.SetActive(false);
         panelSonuc.SetActive(true);
+
         sonucGecildiMi = true;
     }
 
-    public void AddBatteryData(BatteryCellUI batteryData)
+
+public void AddBatteryData(BatteryCellUI batteryData)
     {
         if (gun == 1)
         {

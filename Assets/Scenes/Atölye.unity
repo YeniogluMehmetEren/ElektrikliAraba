@@ -2191,6 +2191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4889233908596016460, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
+      propertyPath: m_text
+      value: "G\xF6rev Paneli"
+      objectReference: {fileID: 0}
     - target: {fileID: 4939484735407412629, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -61878,17 +61882,45 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 793719938810541477, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 793719938810541477, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3641936805967231200}
+    - target: {fileID: 793719938810541477, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Gun3KontrolEt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480131879233408397, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1480131879233408397, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 3641936805967231200}
+    - target: {fileID: 1480131879233408397, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Gun2KontrolEt
+      objectReference: {fileID: 0}
     - target: {fileID: 1922698418418335173, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_Name
       value: UiSicaklikTutmaYenisi
       objectReference: {fileID: 0}
+    - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SonucKontrolEt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276080903582749426, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: batarya_yoneticisi
+      value: 
+      objectReference: {fileID: 3641936805967231200}
+    - target: {fileID: 6276080903582749426, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: egitim_ses_yoneticisi
+      value: 
+      objectReference: {fileID: 387747883}
     - target: {fileID: 8023367823026839037, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
