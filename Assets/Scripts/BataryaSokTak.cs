@@ -4,6 +4,7 @@ public class BataryaSokTak : MonoBehaviour
 {
     [SerializeField] private LiftTemasKontrol liftTemasKontrol;
     [SerializeField] private SoketTakmaCıkartma soketTakmaCikartma;
+    [SerializeField] private BoltRemover boltRemover;
 
     [SerializeField] private Transform liftPlatform;
     [SerializeField] private Transform batarya;
@@ -19,7 +20,7 @@ public class BataryaSokTak : MonoBehaviour
         if (!batarya_lift_temi)
         {
             if (soketTakmaCikartma.TumSoketlerSokulduMu &&
-                liftTemasKontrol.Bataryaya_temas_ediyormu)
+                liftTemasKontrol.Bataryaya_temas_ediyormu && boltRemover.VidalarinHepsiSokulduMu())
             {
                 batarya_lift_temi = true;
 

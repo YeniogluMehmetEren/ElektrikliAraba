@@ -44,7 +44,7 @@ public class BatteryGridManager : MonoBehaviour
             {
                 hucre.tempText.text = sicaklik + " °C";
 
-                if (sicaklik != "Bilinmiyor" && sicaklik != "Bilinmiyor °C")
+                if (sicaklik != "Bilinmiyor" && sicaklik != "Bilinmiyor °C" && sicaklik != "Ölçülmedi")
                 {
                     if (float.Parse(sicaklik) >= 55f)
                         hucre.hucreArkaPlan.color = hucre.kritikRenk;

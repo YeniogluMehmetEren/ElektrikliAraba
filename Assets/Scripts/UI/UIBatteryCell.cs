@@ -23,7 +23,7 @@ public class BatteryCellUI : MonoBehaviour
     {
         hucreID = id;
         idText.text = $"{id:D2}";
-        tempText.text = "Bilinmiyor °C";
+        tempText.text = "Ölçülmedi";
         hucreArkaPlan.color = olculmediRenk;
     }
 }
