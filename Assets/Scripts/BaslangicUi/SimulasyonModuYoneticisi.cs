@@ -25,14 +25,13 @@ public class SimulasyonModuYoneticisi : MonoBehaviour
     {
         if (egitim_butonu.isOn)
         {
-
             SeciliModu = SimulasyonModu.Egitim;
         }
         else
         {
             SeciliModu = SimulasyonModu.Degerlendirme;
-
         }
+
         SceneManager.LoadScene("Atölye");
     }
 

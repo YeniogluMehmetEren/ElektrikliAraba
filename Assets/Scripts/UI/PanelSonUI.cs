@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class PanelSonUI : MonoBehaviour
 {
+
+
+    [SerializeField] private GameObject degerlendirmeSonucuButton;
+    [SerializeField] private GameObject panelDegerlendirmeSonucu;
+
     public TextMeshProUGUI textNormalKacDogru;
     public TextMeshProUGUI textUyariKacDogru;
     public TextMeshProUGUI textKritikKacDogru;
@@ -18,14 +23,26 @@ public class PanelSonUI : MonoBehaviour
     public int KacUyari;
     public int KacKritik;
 
+    public int YanlisHucreSayisi;
+
     private BataryaDegiskenleri[] karsilastirilacakHucreler;
 
     void Start()
     {
-        BataryaYoneticisi bataryaYoneticisi = FindAnyObjectByType<BataryaYoneticisi>();
-        karsilastirilacakHucreler = bataryaYoneticisi.hucreler;
 
+        
+        BataryaYoneticisi bataryaYoneticisi =
+            FindAnyObjectByType<BataryaYoneticisi>();
+
+        karsilastirilacakHucreler = bataryaYoneticisi.hucreler;
         DegerleriBul();
+        if (degerlendirmeSonucuButton != null)
+        {
+            degerlendirmeSonucuButton.SetActive(
+                SimulasyonModuYoneticisi.SeciliModu ==
+                SimulasyonModu.Degerlendirme
+            );
+        }
     }
 
     void DegerleriBul()
@@ -58,6 +75,7 @@ public class PanelSonUI : MonoBehaviour
             }
         }
         int dogruSayisi = NormalKacDogru + UyariKacDogru + KritikKacDogru;
+        YanlisHucreSayisi = 12 - dogruSayisi;
         YuzdeBul(dogruSayisi);
         DegerleriTexteYazdýr();
     }
@@ -106,5 +124,25 @@ public class PanelSonUI : MonoBehaviour
     {
         float yuzdelik = (dogrular / 12f) * 100;
         textYuzdelikOran.text = "%" + yuzdelik.ToString("F2");
+    }
+
+    public void DegerlendirmeSonucunuGoster()
+    {
+  
+
+        ModDegerlendirmeYoneticisi yonetici =
+            FindAnyObjectByType<ModDegerlendirmeYoneticisi>();
+
+        if (yonetici == null)
+        {
+            Debug.LogError("ModDegerlendirmeYoneticisi bulunamadý!");
+            return;
+        }
+
+        yonetici.SonucPaneliniGuncelle();
+
+        panelDegerlendirmeSonucu.SetActive(true);
+
+        gameObject.SetActive(false);
     }
 }

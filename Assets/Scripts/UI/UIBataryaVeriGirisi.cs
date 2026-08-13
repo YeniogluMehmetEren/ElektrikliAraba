@@ -49,7 +49,10 @@ public class UIBataryaVeriGirisi : MonoBehaviour
 
         Gun2yeGec();
 
-        egitim_ses_yoneticisi.BirinciGun();
+        if (SimulasyonModuYoneticisi.SeciliModu != SimulasyonModu.Degerlendirme)
+        {
+            egitim_ses_yoneticisi.BirinciGun();
+        }
     }
 
 
@@ -73,7 +76,10 @@ public class UIBataryaVeriGirisi : MonoBehaviour
       
         Gun3eGec();
 
-        egitim_ses_yoneticisi.IkinciGun();
+        if (SimulasyonModuYoneticisi.SeciliModu != SimulasyonModu.Degerlendirme)
+        {
+            egitim_ses_yoneticisi.IkinciGun();
+        }
     }
 
 
@@ -96,7 +102,11 @@ public class UIBataryaVeriGirisi : MonoBehaviour
 
         SonucaGec();
 
-        egitim_ses_yoneticisi.UcuncuGun();
+        if (SimulasyonModuYoneticisi.SeciliModu != SimulasyonModu.Degerlendirme)
+        {
+            egitim_ses_yoneticisi.UcuncuGun();
+        }
+
     }
 
 

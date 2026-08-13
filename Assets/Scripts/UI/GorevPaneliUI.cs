@@ -37,6 +37,13 @@ public class GorevPaneliUI : MonoBehaviour
 
     void Start()
     {
+
+        if (SimulasyonModuYoneticisi.SeciliModu == SimulasyonModu.Degerlendirme)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         chestTrigger = FindAnyObjectByType<ChestTrigger>();
         gloveTrigger = FindAnyObjectByType<GloveWear>();
         feetTrigger = FindAnyObjectByType<FeetTrigger>();
