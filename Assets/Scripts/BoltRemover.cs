@@ -24,7 +24,7 @@ public class BoltRemover : MonoBehaviour
     {
         foreach (var vida in tumVidalar)
         {
-            vida.ilkPozisyon = vida.vidaGO.transform.position;
+            vida.ilkPozisyon = vida.vidaGO.transform.localPosition;
         }
     }
 
@@ -71,14 +71,14 @@ public class BoltRemover : MonoBehaviour
 
         float gecenZaman = 0f;
         Vector3 baslangicNoktasi = vida.ilkPozisyon;
-        Vector3 hedefNokta = vida.ilkPozisyon + (Vector3.down * asagiInmeMesafesi);
+        Vector3 hedefNokta = vida.ilkPozisyon + (Vector3.back * asagiInmeMesafesi);
 
         while (gecenZaman < islemSuresi)
         {
             gecenZaman += Time.deltaTime;
             float oran = gecenZaman / islemSuresi;
 
-            vida.vidaGO.transform.position = Vector3.Lerp(baslangicNoktasi, hedefNokta, oran);
+            vida.vidaGO.transform.localPosition = Vector3.Lerp(baslangicNoktasi, hedefNokta, oran);
             vida.vidaGO.transform.Rotate(0, 0, donusHizi * Time.deltaTime, Space.Self);
             yield return null;
         }
@@ -104,7 +104,7 @@ public class BoltRemover : MonoBehaviour
         vida.vidaGO.SetActive(true);
 
         float gecenZaman = 0f;
-        Vector3 baslangicNoktasi = vida.ilkPozisyon + (Vector3.down * asagiInmeMesafesi);
+        Vector3 baslangicNoktasi = vida.ilkPozisyon + (Vector3.back * asagiInmeMesafesi);
         Vector3 hedefNokta = vida.ilkPozisyon;
 
         while (gecenZaman < islemSuresi)
@@ -112,13 +112,13 @@ public class BoltRemover : MonoBehaviour
             gecenZaman += Time.deltaTime;
             float oran = gecenZaman / islemSuresi;
 
-            vida.vidaGO.transform.position = Vector3.Lerp(baslangicNoktasi, hedefNokta, oran);
+            vida.vidaGO.transform.localPosition = Vector3.Lerp(baslangicNoktasi, hedefNokta, oran);
             vida.vidaGO.transform.Rotate(0, 0, -donusHizi * Time.deltaTime, Space.Self);
 
             yield return null;
         }
 
-        vida.vidaGO.transform.position = vida.ilkPozisyon;
+        vida.vidaGO.transform.localPosition = vida.ilkPozisyon;
         vida.takiliMi = true;
         kacVidaSokuldu--;
         vida.islemDevamEdiyor = false;
