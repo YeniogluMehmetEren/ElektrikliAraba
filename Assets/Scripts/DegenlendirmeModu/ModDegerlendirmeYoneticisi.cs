@@ -555,8 +555,8 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         if (puan_sonuc_text != null)
         {
             puan_sonuc_text.text =
-                "PUANINIZ: " +
-                mevcut_puan;
+                "Puanınız: " +
+                mevcut_puan+"/100";
         }
 
         HatalariEkranaYaz();

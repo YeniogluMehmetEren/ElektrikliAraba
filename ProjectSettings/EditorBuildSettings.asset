@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main VR Scene.unity
-    guid: 39d818cce2a690f43b724f9254a2bd72
+    path: Assets/Scenes/Baslangic.unity
+    guid: 1d91b806e73414a46af6b2989b41c1c6
   - enabled: 1
     path: "Assets/Scenes/At\xF6lye.unity"
     guid: 6619dccc0439bb543a4b8994e072a8a5
   - enabled: 1
-    path: Assets/Scenes/Baslangic.unity
-    guid: 1d91b806e73414a46af6b2989b41c1c6
+    path: Assets/Scenes/Main VR Scene.unity
+    guid: 39d818cce2a690f43b724f9254a2bd72
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bbddca5bc8f64f34f8fa1ef4863cb0de, type: 2}
