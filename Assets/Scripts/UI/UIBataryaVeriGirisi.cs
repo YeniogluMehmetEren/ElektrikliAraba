@@ -34,9 +34,11 @@ public class UIBataryaVeriGirisi : MonoBehaviour
 
     public void Gun2KontrolEt()
     {
+     
+
         foreach (BatteryCellUI hucre in batteryCellDataGun1)
         {
-            if (hucre.tempText.text.Contains("Bilinmiyor"))
+            if (hucre.tempText.text.Contains("Ölçülmedi"))
             {
                 egitim_ses_yoneticisi.TumHucrelerTaranmadi();
                 return;
@@ -64,7 +66,7 @@ public class UIBataryaVeriGirisi : MonoBehaviour
 
         foreach (BatteryCellUI hucre in batteryCellDataGun2)
         {
-            if (hucre.tempText.text.Contains("Bilinmiyor"))
+            if (hucre.tempText.text.Contains("Ölçülmedi"))
             {
                 egitim_ses_yoneticisi.TumHucrelerTaranmadi();
                 return;
@@ -93,7 +95,7 @@ public class UIBataryaVeriGirisi : MonoBehaviour
 
         foreach (BatteryCellUI hucre in batteryCellDataGun3)
         {
-            if (hucre.tempText.text.Contains("Bilinmiyor"))
+            if (hucre.tempText.text.Contains("Ölçülmedi"))
             {
                 egitim_ses_yoneticisi.TumHucrelerTaranmadi();
                 return;
