@@ -60,7 +60,7 @@ public class GorevPaneliUI : MonoBehaviour
 
         kucukLiftHolder.SetActive(false);
 
-        StartCoroutine(SetGorevSicaklikKontolEtVerileriGir());
+        StartCoroutine(SetGorevGiysiGiy());
         
         //StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
 
