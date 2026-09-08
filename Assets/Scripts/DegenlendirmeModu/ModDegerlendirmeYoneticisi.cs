@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -47,6 +48,8 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
     private FLIRController flir_kontrol;
     private UIBataryaVeriGirisi ui_batarya_veri;
 
+    private Boolean kücük_lift_sokettemi = false;
+
     private void Start()
     {
         if (SimulasyonModuYoneticisi.SeciliModu !=
@@ -72,6 +75,11 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         kucuk_lift_kontrol = FindAnyObjectByType<LiftAnimationController>();
 
         lift_yuvasi = FindAnyObjectByType<LiftYuvasi>();
+
+        if (lift_yuvasi != null)
+        {
+            lift_yuvasi.kücük_lift_sokete_girdi += KucukLiftSocketeGirdi;
+        }
 
         kucuk_lift_temas = FindAnyObjectByType<LiftTemasKontrol>();
 
@@ -107,7 +115,6 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         {
             return;
         }
-
         PPEKontrol();
         AracKaldirmaKontrol();
         KucukLiftGetirKontrol();
@@ -125,7 +132,10 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
             return;
         }
     }
-
+    private void KucukLiftSocketeGirdi()
+    {
+        kücük_lift_sokettemi = true;
+    }
     private bool PpeTamamMi()
     {
         if (onluk_kontrol == null ||
@@ -167,7 +177,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
             return;
         }
 
-        if (!lift_yuvasi.liftAlandaMi)
+        if (!kücük_lift_sokettemi)
         {
             return;
         }
@@ -216,7 +226,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         }
 
         if (lift_yuvasi == null ||
-            !lift_yuvasi.liftAlandaMi)
+            !kücük_lift_sokettemi)
         {
             HataEkle(
                 DegerlendirmeHatasi.KucukLiftYeri()
@@ -252,7 +262,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         }
 
         if (lift_yuvasi == null ||
-            !lift_yuvasi.liftAlandaMi)
+            !kücük_lift_sokettemi)
         {
             HataEkle(
                 DegerlendirmeHatasi.KucukLiftYeri()
@@ -296,7 +306,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         }
 
         if (lift_yuvasi == null ||
-            !lift_yuvasi.liftAlandaMi)
+            !kücük_lift_sokettemi)
         {
             HataEkle(
                 DegerlendirmeHatasi.KucukLiftYeri()
@@ -348,7 +358,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         }
 
         if (lift_yuvasi == null ||
-            !lift_yuvasi.liftAlandaMi)
+            !kücük_lift_sokettemi)
         {
             HataEkle(
                 DegerlendirmeHatasi.KucukLiftYeri()
@@ -407,7 +417,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         }
 
         if (lift_yuvasi == null ||
-            !lift_yuvasi.liftAlandaMi)
+            !kücük_lift_sokettemi)
         {
             HataEkle(
                 DegerlendirmeHatasi.KucukLiftYeri()
