@@ -29,8 +29,6 @@ public class PanelSonUI : MonoBehaviour
 
     void Start()
     {
-
-        
         BataryaYoneticisi bataryaYoneticisi =
             FindAnyObjectByType<BataryaYoneticisi>();
 
@@ -128,8 +126,6 @@ public class PanelSonUI : MonoBehaviour
 
     public void DegerlendirmeSonucunuGoster()
     {
-  
-
         ModDegerlendirmeYoneticisi yonetici =
             FindAnyObjectByType<ModDegerlendirmeYoneticisi>();
 

@@ -21,6 +21,8 @@ public class PanelSonucUI : MonoBehaviour
     
     private BataryaDegiskenleri[] karsilastirilacakHucreler;
 
+    public bool degerlendirmeBittiMi = false;
+
     void Start()
     {
         UIBataryaVeriGirisi uIBataryaVeriGirisi = FindAnyObjectByType<UIBataryaVeriGirisi>();
@@ -41,6 +43,8 @@ public class PanelSonucUI : MonoBehaviour
         {
             sonPanel.SetActive(true);
             panel.SetActive(false);
+
+            degerlendirmeBittiMi = true;
         }
         else
         {

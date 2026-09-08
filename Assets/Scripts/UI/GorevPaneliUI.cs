@@ -18,6 +18,7 @@ public class GorevPaneliUI : MonoBehaviour
     private LiftAnimationController kucukLiftMovement;
     private FLIRController fLIRController;
     private UIBataryaVeriGirisi uiBataryaVeriGirisi;
+    private PanelSonucUI panelSonucUI;
     private LiftYuvasi liftYuvasý;
 
     [SerializeField] private EgitimSesYoneticisi egitim_ses_yoneticisi;
@@ -55,10 +56,11 @@ public class GorevPaneliUI : MonoBehaviour
         boltRemover = FindAnyObjectByType<BoltRemover>();
         fLIRController = FindAnyObjectByType<FLIRController>();
         uiBataryaVeriGirisi = FindAnyObjectByType<UIBataryaVeriGirisi>();
+        panelSonucUI = FindAnyObjectByType<PanelSonucUI>(FindObjectsInactive.Include);
 
         kucukLiftHolder.SetActive(false);
 
-        StartCoroutine(SetGorevGiysiGiy());
+        StartCoroutine(SetGorevSicaklikKontolEtVerileriGir());
         
         //StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
 
@@ -311,8 +313,8 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevSicaklikKontolEtVerileriGir()
     {
-        egitim_ses_yoneticisi.TermalKamerayiAl();
-        yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
+        //egitim_ses_yoneticisi.TermalKamerayiAl();
+        //yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
         baslikText.text = "Verileri Not Al";
         GameObject yeniPrefebTermaliAl = Instantiate(gorevSatiriPrefab, panel);
@@ -327,16 +329,22 @@ public class GorevPaneliUI : MonoBehaviour
         GorevSatiriRowUI satirKoduGun3Gec = yeniPrefebGun3Gec.GetComponent<GorevSatiriRowUI>();
         satirKoduGun3Gec.gorevYazisi.text = "Gün 2'nin verilerini kaydet ve Gün 3'e geç.";
         satirKoduGun3Gec.toggleTamamlandiMi.isOn = false;
-        GameObject yeniPrefebSonucaGec = Instantiate(gorevSatiriPrefab, panel);
-        GorevSatiriRowUI satirKoduSonucaGec = yeniPrefebSonucaGec.GetComponent<GorevSatiriRowUI>();
-        satirKoduSonucaGec.gorevYazisi.text = "Gün 3'ün verilerini kaydet ve sonuçlarýný gör.";
-        satirKoduSonucaGec.toggleTamamlandiMi.isOn = false;
+
+        GameObject yeniPrefebDegerlendirmeyeGec = Instantiate(gorevSatiriPrefab, panel);
+        GorevSatiriRowUI satirKoduDegerlendirmeyeGec = yeniPrefebDegerlendirmeyeGec.GetComponent<GorevSatiriRowUI>();
+        satirKoduDegerlendirmeyeGec.gorevYazisi.text = "Gün 3'ün verilerini kaydet ve deðerlendirme ekranýna geç.";
+        satirKoduDegerlendirmeyeGec.toggleTamamlandiMi.isOn = false;
+
+        GameObject yeniPrefebKararVer = Instantiate(gorevSatiriPrefab, panel);
+        GorevSatiriRowUI satirKoduKararVer = yeniPrefebKararVer.GetComponent<GorevSatiriRowUI>();
+        satirKoduKararVer.gorevYazisi.text = "Hücrelerin durumunu belirle.";
+        satirKoduKararVer.toggleTamamlandiMi.isOn = false;
 
         termalKamera.GorevBasladi(); 
 
 
 
-        while (!fLIRController.termalTutulduMu || !uiBataryaVeriGirisi.gun2GecildiMi || !uiBataryaVeriGirisi.gun3GecildiMi || !uiBataryaVeriGirisi.sonucGecildiMi)
+        while (!fLIRController.termalTutulduMu || !uiBataryaVeriGirisi.gun2GecildiMi || !uiBataryaVeriGirisi.gun3GecildiMi || !uiBataryaVeriGirisi.sonucGecildiMi || !panelSonucUI.degerlendirmeBittiMi)
         {
             if (fLIRController.termalTutulduMu)
             {
@@ -353,21 +361,27 @@ public class GorevPaneliUI : MonoBehaviour
             }
             if (uiBataryaVeriGirisi.sonucGecildiMi)
             {
-                satirKoduSonucaGec.toggleTamamlandiMi.isOn = true;
+                satirKoduDegerlendirmeyeGec.toggleTamamlandiMi.isOn = true;
+            }
+            if (panelSonucUI.degerlendirmeBittiMi)
+            {
+                satirKoduKararVer.toggleTamamlandiMi.isOn = true;
             }
             yield return null;
         }
         satirKoduTermaliAl.toggleTamamlandiMi.isOn = true;
         satirKoduGun2Gec.toggleTamamlandiMi.isOn = true;
         satirKoduGun3Gec.toggleTamamlandiMi.isOn = true;
-        satirKoduSonucaGec.toggleTamamlandiMi.isOn = true;
+        satirKoduDegerlendirmeyeGec.toggleTamamlandiMi.isOn = true;
+        satirKoduKararVer.toggleTamamlandiMi.isOn = true;
         termalKamera.GorevBitti();
 
         yeniPrefebTermaliAl.SetActive(false);
         yeniPrefebGun2Gec.SetActive(false);
         yeniPrefebGun3Gec.SetActive(false);
-        yeniPrefebSonucaGec.SetActive(false);
+        yeniPrefebDegerlendirmeyeGec.SetActive(false);
+        yeniPrefebKararVer.SetActive(false);
 
-        baslikText.text = "TEBRÝKLER!\nEðiticiyi Bitirdin";
+        baslikText.text = "TEBRÝKLER!\nEðiticiyi Tamamladýn\nSonuç Ekranýndan Puanýna Bakmayý Unutma!";
     }
 }

@@ -7780,6 +7780,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8023367823026839037, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
   m_PrefabInstance: {fileID: 5984612852592442508}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1093483961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6276080903582749426, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+  m_PrefabInstance: {fileID: 5984612852592442508}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2b7fcb1568cf04c97dcd3084a7c82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1100159758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8834,7 +8845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "De\u011Ferlendirme"
+  m_text: "Sonu\xE7"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10279,7 +10290,7 @@ GameObject:
   - component: {fileID: 1419290957}
   - component: {fileID: 1419290956}
   m_Layer: 5
-  m_Name: PanelDegerlendirmeSonucu
+  m_Name: PanelSonuc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64534,6 +64545,10 @@ PrefabInstance:
       value: 4281476635
       objectReference: {fileID: 0}
     - target: {fileID: 4628394296414450471, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_Name
+      value: PanelDegerlendirme
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628394296414450471, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -64686,8 +64701,24 @@ PrefabInstance:
       value: 0.24705882
       objectReference: {fileID: 0}
     - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1093483961}
+    - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SonucKontrolEt
+      value: SonucaGec
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIBataryaVeriGirisi, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5747365353788290530, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -64884,6 +64915,10 @@ PrefabInstance:
     - target: {fileID: 7716310285514086616, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_Color.r
       value: 0.7882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 7953171159651263845, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
+      propertyPath: m_text
+      value: "De\u011Ferlendirme"
       objectReference: {fileID: 0}
     - target: {fileID: 7953171159651263845, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_fontSize
