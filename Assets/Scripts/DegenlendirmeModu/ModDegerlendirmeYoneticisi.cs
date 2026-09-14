@@ -547,14 +547,14 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         if (yanlis_hucre_text != null)
         {
             yanlis_hucre_text.text =
-                "Yanlış değerlendirilen: " +
+                "Misjudged: " +
                 yanlis_hucre_sayisi;
         }
 
         if (hucre_cezasi_text != null)
         {
             hucre_cezasi_text.text =
-                "Hücre cezası: " +
+                "Cell Penalty: " +
                 yanlis_hucre_sayisi +
                 " × -" +
                 yanlis_hucre_cezasi +
@@ -565,7 +565,7 @@ public class ModDegerlendirmeYoneticisi : MonoBehaviour
         if (puan_sonuc_text != null)
         {
             puan_sonuc_text.text =
-                "Puanınız: " +
+                "Final Score: " +
                 mevcut_puan+"/100";
         }
 

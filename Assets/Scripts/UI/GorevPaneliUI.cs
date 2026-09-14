@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.InputSystem.LowLevel.InputStateHistory;
 
 public class GorevPaneliUI : MonoBehaviour
 {
@@ -61,8 +63,8 @@ public class GorevPaneliUI : MonoBehaviour
         kucukLiftHolder.SetActive(false);
 
         StartCoroutine(SetGorevGiysiGiy());
-        
-        //StartCoroutine(SetGorevSoketleriVeVidalariCikartBataryayiIndir());
+
+        //StartCoroutine(SetGorevSicaklikKontolEtVerileriGir());
 
         /* GÖREV SIRASI
         SetGorevGiysiGiy();
@@ -78,18 +80,18 @@ public class GorevPaneliUI : MonoBehaviour
         egitim_ses_yoneticisi.KoruyucuEkipmanGiyme();
         yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
-        baslikText.text = "Koruyucu Giysileri Giy";
+        baslikText.text = "Equip Protective Gear";
         GameObject yeniPrefebOnluk = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduOnluk = yeniPrefebOnluk.GetComponent<GorevSatiriRowUI>();
-        satirKoduOnluk.gorevYazisi.text = "Önlük Giy.";
+        satirKoduOnluk.gorevYazisi.text = "Equip Apron";
         satirKoduOnluk.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebEldiven = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduEldiven = yeniPrefebEldiven.GetComponent<GorevSatiriRowUI>();
-        satirKoduEldiven.gorevYazisi.text = "Eldivenleri Giy.";
+        satirKoduEldiven.gorevYazisi.text = "Equip Gloves";
         satirKoduEldiven.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebAyakkabi = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduAyakkabi = yeniPrefebAyakkabi.GetComponent<GorevSatiriRowUI>();
-        satirKoduAyakkabi.gorevYazisi.text = "Ayakkabýlarý Giy.";
+        satirKoduAyakkabi.gorevYazisi.text = "Equip Safety Shoes";
         satirKoduAyakkabi.toggleTamamlandiMi.isOn = false;
         
         onluk.GorevBasladi();
@@ -133,10 +135,10 @@ public class GorevPaneliUI : MonoBehaviour
         egitim_ses_yoneticisi.AraciYukariKaldir();
         yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
-        baslikText.text = "Aracý Yukarý Kaldýr";
+        baslikText.text = "Raise Vehicle";
         GameObject yeniPrefebAracKaldýrma = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduAracKaldýrma = yeniPrefebAracKaldýrma.GetComponent<GorevSatiriRowUI>();
-        satirKoduAracKaldýrma.gorevYazisi.text = "Aracý, tuþlarý kullanarak yukarý kaldýr.";
+        satirKoduAracKaldýrma.gorevYazisi.text = "Raise the vehicle using the buttons";
         satirKoduAracKaldýrma.toggleTamamlandiMi.isOn = false;
 
         büyükLiftUpBtn.GorevBasladi();
@@ -162,17 +164,14 @@ public class GorevPaneliUI : MonoBehaviour
         egitim_ses_yoneticisi.LiftiBataryaninAltinaGetir();
         yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
-        baslikText.text = "Lifti Ayarla";
+        baslikText.text = "Setup Lift";
         GameObject yeniPrefebLiftiGetir = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduLiftiGetir = yeniPrefebLiftiGetir.GetComponent<GorevSatiriRowUI>();
-        satirKoduLiftiGetir.gorevYazisi.text = "Lifti bataryanýn altýna getir.";
+        satirKoduLiftiGetir.gorevYazisi.text = "Position the lift under the battery";
         satirKoduLiftiGetir.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebLiftiKaldir = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduLiftiKaldir = yeniPrefebLiftiKaldir.GetComponent<GorevSatiriRowUI>();
-
-
-
-        satirKoduLiftiKaldir.gorevYazisi.text = "Lifti yukarý kaldýr.";
+        satirKoduLiftiKaldir.gorevYazisi.text = "Raise the lift";
         satirKoduLiftiKaldir.toggleTamamlandiMi.isOn = false;
 
         kucukLift.GorevBasladi();
@@ -215,22 +214,22 @@ public class GorevPaneliUI : MonoBehaviour
         yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
 
-        baslikText.text = "Bataryayý Sök ve Ýndir";
+        baslikText.text = "Detach and Lower Battery";
         GameObject yeniPrefebSoketleriCikart = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduSoketleriCikart = yeniPrefebSoketleriCikart.GetComponent<GorevSatiriRowUI>();
-        satirKoduSoketleriCikart.gorevYazisi.text = "Bataryanýn önünde bulunan soketleri çýkart.";
+        satirKoduSoketleriCikart.gorevYazisi.text = "Disconnect the connectors at the front of the battery";
         satirKoduSoketleriCikart.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebMatkapiAl = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduMatkapiAl = yeniPrefebMatkapiAl.GetComponent<GorevSatiriRowUI>();
-        satirKoduMatkapiAl.gorevYazisi.text = "Matkapý eline al.";
+        satirKoduMatkapiAl.gorevYazisi.text = "Grab the drill";
         satirKoduMatkapiAl.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebVidalariCikart = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduVidalariCikart = yeniPrefebVidalariCikart.GetComponent<GorevSatiriRowUI>();
-        satirKoduVidalariCikart.gorevYazisi.text = "Bataryanýn etrafýnda bulunan vidalarý sök.  0/13";
+        satirKoduVidalariCikart.gorevYazisi.text = "Remove the screws around the battery  0/13";
         satirKoduVidalariCikart.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebBataryayiIndir = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduBataryayiIndir = yeniPrefebBataryayiIndir.GetComponent<GorevSatiriRowUI>();
-        satirKoduBataryayiIndir.gorevYazisi.text = "Lifti indirerek bataryayý aþaðýya indir.";
+        satirKoduBataryayiIndir.gorevYazisi.text = "Lower the lift to bring the battery down";
         satirKoduBataryayiIndir.toggleTamamlandiMi.isOn = false;
 
         soketler.GorevBasladi();
@@ -268,7 +267,7 @@ public class GorevPaneliUI : MonoBehaviour
                 satirKoduMatkapiAl.toggleTamamlandiMi.isOn = true;
                 matkap.GorevBitti();
             }
-            satirKoduVidalariCikart.gorevYazisi.text = "Bataryanýn etrafýnda bulunan vidalarý sök.  " + boltRemover.GetKacVidaSokuldu() + "/13";
+            satirKoduVidalariCikart.gorevYazisi.text = "Remove the screws around the battery  " + boltRemover.GetKacVidaSokuldu() + "/13";
             if (boltRemover.VidalarinHepsiSokulduMu())
             {
                 satirKoduVidalariCikart.toggleTamamlandiMi.isOn = true;
@@ -313,31 +312,31 @@ public class GorevPaneliUI : MonoBehaviour
 
     IEnumerator SetGorevSicaklikKontolEtVerileriGir()
     {
-        //egitim_ses_yoneticisi.TermalKamerayiAl();
-        //yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
+        egitim_ses_yoneticisi.TermalKamerayiAl();
+        yield return new WaitWhile(() => egitim_ses_yoneticisi.SesCaliyorMu());
 
-        baslikText.text = "Verileri Not Al";
+        baslikText.text = "Record Data";
         GameObject yeniPrefebTermaliAl = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduTermaliAl = yeniPrefebTermaliAl.GetComponent<GorevSatiriRowUI>();
-        satirKoduTermaliAl.gorevYazisi.text = "Termal kamerayý eline al.";
+        satirKoduTermaliAl.gorevYazisi.text = "Grab the thermal camera";
         satirKoduTermaliAl.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebGun2Gec = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduGun2Gec = yeniPrefebGun2Gec.GetComponent<GorevSatiriRowUI>();
-        satirKoduGun2Gec.gorevYazisi.text = "Gün 1'in verilerini kaydet ve Gün 2'ye geç.";
+        satirKoduGun2Gec.gorevYazisi.text = "Record Day 1 data and proceed to Day 2";
         satirKoduGun2Gec.toggleTamamlandiMi.isOn = false;
         GameObject yeniPrefebGun3Gec = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduGun3Gec = yeniPrefebGun3Gec.GetComponent<GorevSatiriRowUI>();
-        satirKoduGun3Gec.gorevYazisi.text = "Gün 2'nin verilerini kaydet ve Gün 3'e geç.";
+        satirKoduGun3Gec.gorevYazisi.text = "Record Day 2 data and proceed to Day 3";
         satirKoduGun3Gec.toggleTamamlandiMi.isOn = false;
 
         GameObject yeniPrefebDegerlendirmeyeGec = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduDegerlendirmeyeGec = yeniPrefebDegerlendirmeyeGec.GetComponent<GorevSatiriRowUI>();
-        satirKoduDegerlendirmeyeGec.gorevYazisi.text = "Gün 3'ün verilerini kaydet ve deðerlendirme ekranýna geç.";
+        satirKoduDegerlendirmeyeGec.gorevYazisi.text = "Record Day 3 data and proceed to the assessment screen";
         satirKoduDegerlendirmeyeGec.toggleTamamlandiMi.isOn = false;
 
         GameObject yeniPrefebKararVer = Instantiate(gorevSatiriPrefab, panel);
         GorevSatiriRowUI satirKoduKararVer = yeniPrefebKararVer.GetComponent<GorevSatiriRowUI>();
-        satirKoduKararVer.gorevYazisi.text = "Hücrelerin durumunu belirle.";
+        satirKoduKararVer.gorevYazisi.text = "Assess cell conditions";
         satirKoduKararVer.toggleTamamlandiMi.isOn = false;
 
         termalKamera.GorevBasladi(); 
@@ -382,6 +381,6 @@ public class GorevPaneliUI : MonoBehaviour
         yeniPrefebDegerlendirmeyeGec.SetActive(false);
         yeniPrefebKararVer.SetActive(false);
 
-        baslikText.text = "TEBRÝKLER!\nEðiticiyi Tamamladýn\nSonuç Ekranýndan Puanýna Bakmayý Unutma!";
+        baslikText.text = "CONGRATULATIONS!\nTutorial Completed\nDon't forget to check your score on the Results screen!";
     }
 }

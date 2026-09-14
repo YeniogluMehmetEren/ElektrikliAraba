@@ -1,3 +1,5 @@
+using UnityEngine.Rendering;
+
 public class DegerlendirmeHatasi
 {
     public DegerlendirmeHataKodu kod;
@@ -22,7 +24,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.PPE,
             HataTürü.Guvenlik,
-            "Gerekli koruyucu ekipmanlar kullanılmadan işleme devam edildi.",
+            "Proceeded without required PPE.",
             10
         );
     }
@@ -32,7 +34,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.AracKaldirma,
             HataTürü.Prosedur,
-            "Araç kaldırılmadan sonraki işleme geçildi.",
+            "Proceeded to the next step without lifting the vehicle.",
             5
         );
     }
@@ -42,7 +44,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.KucukLiftYeri,
             HataTürü.Prosedur,
-            "Küçük lift getirilmeden sonraki işleme geçildi.",
+            "Proceeded to the next step without positioning the small lift.",
             5
         );
     }
@@ -52,7 +54,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.KucukLiftTemas,
             HataTürü.Prosedur,
-            "Küçük lift bataryaya temas ettirilmeden sonraki işleme geçildi.",
+            "Proceeded to the next step without supporting the battery with the lift.",
             5
         );
     }
@@ -62,7 +64,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.Soket,
             HataTürü.Prosedur,
-            "Soketler çıkarılmadan sonraki işleme geçildi.",
+            "Proceeded to the next step without disconnecting the connectors.",
             5
         );
     }
@@ -72,7 +74,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.Matkap,
             HataTürü.Prosedur,
-            "Matkap alınmadan sonraki işleme geçildi.",
+            "Proceeded to the next step without grabbing the drill.",
             5
         );
     }
@@ -82,7 +84,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.Vida,
             HataTürü.Prosedur,
-            "Vidalar çıkarılmadan sonraki işleme geçildi.",
+            "Proceeded to the next step without removing the screws.",
             5
         );
     }
@@ -92,7 +94,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.BataryaIndirme,
             HataTürü.Prosedur,
-            "Batarya indirilmeden sonraki işleme geçildi.",
+            "Proceeded to the next step without lowering the battery.",
             10
         );
     }
@@ -102,7 +104,7 @@ public class DegerlendirmeHatasi
         return new DegerlendirmeHatasi(
             DegerlendirmeHataKodu.FLIR,
             HataTürü.Prosedur,
-            "Termal kamera ile kontrol sırası tamamlanmadan işlem yapıldı.",
+            "Action performed before completing the thermal camera inspection.",
             5
         );
     }
