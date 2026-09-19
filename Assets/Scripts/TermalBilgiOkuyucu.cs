@@ -91,7 +91,26 @@ public class TermalBilgiOkuyucu : MonoBehaviour
         ekranBilgiText.text =
             $"<color=#000000>CELL {hucre.cell_id}</color>\n\n" +
             $"<color=#000000>{hucre.mevcut_sicaklik:0.0}°C</color>\n\n" +
-            $"<color={DurumRengi(hucre.hucre_durumu)}>{hucre.hucre_durumu}</color>";
+            $"<color={DurumRengi(hucre.hucre_durumu)}>{DurumIsmı(hucre.hucre_durumu)}</color>";
+    }
+
+    private string DurumIsmı(HucreDurumu durum)
+    {
+        switch (durum)
+        {
+            case HucreDurumu.Normal:
+                return "normal";
+
+            case HucreDurumu.Uyarı:
+                return "Warning";
+
+            case HucreDurumu.Kritik:
+                return "Critical";
+
+
+            default:
+                return "Unknown";
+        }
     }
 
     private string DurumRengi(HucreDurumu durum)

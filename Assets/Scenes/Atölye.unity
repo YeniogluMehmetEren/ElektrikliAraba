@@ -2197,7 +2197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4889233908596016460, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
       propertyPath: m_text
-      value: "G\xF6rev Paneli"
+      value: Task Panel
       objectReference: {fileID: 0}
     - target: {fileID: 4939484735407412629, guid: 10ccaafec38b11b4abb66875af3ef7eb, type: 3}
       propertyPath: m_IsActive
@@ -2931,20 +2931,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EgitimSesYoneticisi
   sesKaynagi: {fileID: 387747884}
   gorev_tamamlandi: {fileID: 0}
-  koruyucu_ekipman_giyme: {fileID: 8300000, guid: 067f32d6ea715be4a9e5ca53d411df2e, type: 3}
-  araci_yukari_kaldir: {fileID: 8300000, guid: 4864911ec1202d34284a0347ba73b35d, type: 3}
-  lifti_bataryanin_altina_getir: {fileID: 8300000, guid: 6e06f35b1c7682f41bebf3eff64f7f92, type: 3}
-  lifti_yukari_kaldir: {fileID: 8300000, guid: 5ca5f49ccf98fcb4a89313a5466ed2ad, type: 3}
-  soketleri_cikar: {fileID: 8300000, guid: bf49ac6e6074ead4bb3c4e40432c1396, type: 3}
-  matkabi_al: {fileID: 8300000, guid: 77919ade375bc904d88b28900e764526, type: 3}
-  vidalari_sok: {fileID: 8300000, guid: 823a7c3cea540234ea68ccef4b014662, type: 3}
-  bataryayi_indir: {fileID: 8300000, guid: 5e36285e41c625e45a4ee103c34f8898, type: 3}
-  termal_kamerayi_al: {fileID: 8300000, guid: d39e594ef1d2ef048b777bdcf447b24f, type: 3}
-  tum_hucreler_taramadi: {fileID: 8300000, guid: 1c16ad91992c6fe488fb78d3319cd157, type: 3}
-  birinci_gun: {fileID: 8300000, guid: 402f330b12a7670438f3b674bc1b4be8, type: 3}
-  ikinci_gun: {fileID: 8300000, guid: 803c1d078ce1d594382410f20e4d6ae3, type: 3}
-  ucuncu_gun: {fileID: 8300000, guid: 96febe023dcd4434093138886ab78c06, type: 3}
-  egitim_tamamlandi: {fileID: 8300000, guid: 43bd99aae8e71ae46be1285605ca873d, type: 3}
+  koruyucu_ekipman_giyme: {fileID: 8300000, guid: 153f5fca3194cb74fa0babd8f0a0d3cf, type: 3}
+  araci_yukari_kaldir: {fileID: 8300000, guid: 70c992fa7ac32124f8581d126f15ef33, type: 3}
+  lifti_bataryanin_altina_getir: {fileID: 8300000, guid: 5b804b50b2f1b6147b95726198e262a7, type: 3}
+  lifti_yukari_kaldir: {fileID: 8300000, guid: b995a06c0d3535b449668984b22b1574, type: 3}
+  soketleri_cikar: {fileID: 8300000, guid: 3867a66235dff634bb95ab0e426aff26, type: 3}
+  matkabi_al: {fileID: 8300000, guid: 9e472c32a2b309845b62c3e0ade2ada2, type: 3}
+  vidalari_sok: {fileID: 8300000, guid: 267412f77fd05524d80f2c3d88702398, type: 3}
+  bataryayi_indir: {fileID: 8300000, guid: 422c1513785ac4b4cacba638da79e510, type: 3}
+  termal_kamerayi_al: {fileID: 8300000, guid: b5b31d5801f592f4caa1d9cbe83eb582, type: 3}
+  tum_hucreler_taramadi: {fileID: 8300000, guid: 9be5c1ddbb0b93e4ab8f66182c4157f1, type: 3}
+  birinci_gun: {fileID: 8300000, guid: 92ee431e4e0caae43800f8cf813a42fd, type: 3}
+  ikinci_gun: {fileID: 8300000, guid: 6d33e6cb36c371641a90a45c76c810ed, type: 3}
+  ucuncu_gun: {fileID: 8300000, guid: 7882bde803cb6d24bb7705db285c2340, type: 3}
+  egitim_tamamlandi: {fileID: 8300000, guid: d2781ea1bab8d0b4098bd466454ea3f9, type: 3}
 --- !u!82 &387747884
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64758,7 +64758,7 @@ PrefabInstance:
       objectReference: {fileID: 1093483961}
     - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SonucaGec
+      value: SonucKontrolEt
       objectReference: {fileID: 0}
     - target: {fileID: 5630920905850937205, guid: 82409f90a2f5c36498491e4cb4c58f6e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
